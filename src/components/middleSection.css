@@ -10,10 +10,21 @@
     max-width: 50%;
     padding-right: 2rem;
 }
+@keyframes slideUp {
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
 
 .text-items {
     margin-left: 0; /* Default margin */
     margin-top: 0;  /* Default margin */
+    animation: slideUp 1s ease-out; /* Apply animation to this container */
 }
 
 .mini-heading {
@@ -23,7 +34,7 @@
     letter-spacing: 6%;
     color: rgba(35, 59, 151, 0.7);
     margin: 0;
-    animation: slideUp 1s ease-out;
+    animation: slideUp 1s ease-out; /* Ensure animation is applied */
 }
 
 .transform-text {
@@ -33,11 +44,6 @@
     padding-top: 0.7rem;
     color: #213344;
     margin: 0;
-    animation: slideUp 1s ease-out;
-}
-
-.transform-text span {
-    color: #233b97;
     animation: slideUp 1s ease-out;
 }
 
@@ -61,8 +67,8 @@
     letter-spacing: -1%;
     color: #5D6C7C;
     margin: 0;
-    animation: slideUp 1s ease-out;
     padding-top: 2rem;
+    animation: slideUp 1s ease-out;
 }
 
 .image-content {

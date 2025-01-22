@@ -1,0 +1,166 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 89px;
+    box-shadow: 0px 4px 81.5px -7px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    background-color: white;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #233B97;
+    margin-left: 3rem;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 3rem;
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+
+.nav-links li a:hover {
+    font-weight: 600;
+    font-size: medium;
+    color: #233B97;
+    text-decoration: underline;
+}
+
+.contact-button {
+    background-color: #233B97;
+    color: white;
+    border: none;
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 22px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 3rem;
+}
+
+.contact-button:hover {
+    background-color: #0056b3;
+}
+
+/* Burger Menu */
+.burger {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.burger-line {
+    width: 25px;
+    height: 3px;
+    background-color: #233B97;
+}
+
+/* Fullscreen Menu - Hidden by default */
+.fullscreen-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #233a97dc;
+    color: white;
+    z-index: 1001;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Menu options inside fullscreen menu */
+.fullscreen-nav-links {
+    list-style: none;
+    padding: 0;
+}
+
+.fullscreen-nav-links li {
+    margin: 2rem 0;
+}
+
+.fullscreen-nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.fullscreen-nav-links li a:hover {
+    color: #233B97;
+}
+
+/* Show the navigation menu when burger is clicked */
+.nav.active {
+    display: block;
+}
+
+/* By default, links should be horizontal on large screens */
+.nav-links {
+    display: flex;
+    gap: 1rem;
+    text-align: center;
+}
+
+/* Media queries for responsive behavior */
+@media (max-width: 768px) {
+    /* For mobile screens, hide the links by default */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        text-align: left;
+        width: 100%;
+    }
+
+    /* When the menu is active, show the links vertically */
+    .nav.active .nav-links {
+        display: flex;
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    .header {
+        height: auto;
+        padding: 1rem;
+    }
+
+    .logo {
+        margin-left: 1rem;
+    }
+
+    .contact-button {
+        margin-right: 1rem;
+    }
+    
+    /* When the menu is open, show fullscreen overlay */
+    .fullscreen-menu {
+        display: flex;
+    }
+}

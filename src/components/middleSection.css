@@ -30,7 +30,7 @@
 .mini-heading {
     font-family: "Poppins", sans-serif;
     font-weight: 600;
-    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    font-size: clamp(0.8rem, 2.5vw, 1.2rem);
     letter-spacing: 6%;
     color: rgba(35, 59, 151, 0.7);
     margin: 0;
@@ -50,7 +50,7 @@
 .solutions-text {
     font-family: 'Inter', sans-serif;
     font-weight: 300;
-    font-size: clamp(1.2rem, 3.5vw, 2rem);
+    font-size: clamp(1.2rem, 3.5vw, 1.6rem);
     color: #323232;
     margin: 0;
     line-height: 1.4;
@@ -63,12 +63,16 @@
 .building-text {
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
-    font-size: clamp(1.2rem, 3.5vw, 1.8rem);
+    font-size: clamp(1rem, 3.5vw, 1.5rem);
     letter-spacing: -1%;
     color: #5D6C7C;
     margin: 0;
     padding-top: 2rem;
     animation: slideUp 1s ease-out;
+}
+
+span{
+    color: #233B97;
 }
 
 .image-content {

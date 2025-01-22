@@ -1,0 +1,115 @@
+.stats-section {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    text-align: center; /* Ensure alignment is centered */
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
+  
+  .stat-item {
+    font-family: "Poppins", sans-serif;
+    flex: 1 1 22%; /* Allow flexibility for stat items */
+    min-width: 150px; /* Prevent them from getting too small */
+  }
+  
+  .countup {
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  .countup-number {
+    font-size: 1.8rem; /* Default font size for desktop */
+    font-weight: bold;
+    color: #233b97;
+  }
+  
+  .plus-sign {
+    font-size: 2rem;
+    margin-left: 0.5rem;
+    font-weight: normal;
+  }
+  
+  .stat-item p {
+    font-size: 1.2rem;
+    color: #333;
+    margin-top: 0.5rem;
+  }
+  
+  /* Media queries for responsiveness */
+  @media (max-width: 1024px) {
+    .countup-number {
+      font-size: 1.8rem; /* Slightly smaller for medium-sized screens */
+    }
+  
+    .plus-sign {
+      font-size: 1.8rem;
+    }
+  
+    .stat-item p {
+      font-size: 1.2rem;
+    }
+  
+    .stats-section {
+      padding: 2rem;
+      justify-content: center;
+    }
+  
+    .stat-item {
+      flex: 1 1 45%; /* Two items per row */
+      margin-bottom: 1rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .countup-number {
+      font-size: 1.6rem; /* Smaller size for tablets */
+    }
+  
+    .plus-sign {
+      font-size: 1.6rem;
+    }
+  
+    .stat-item p {
+      font-size: 1.1rem;
+    }
+  
+    .stats-section {
+      flex-direction: column; /* Stack the stats section vertically on mobile */
+      align-items: center; /* Center the items */
+      justify-content: center;
+      padding: 2rem 1rem;
+      gap: 1rem;
+    }
+  
+    .stat-item {
+      flex: 1 1 90%; /* Stats should take almost full width */
+      margin-bottom: 1rem; /* Space between items */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .countup-number {
+      font-size: 1.4rem; /* Smaller size for mobile */
+    }
+  
+    .plus-sign {
+      font-size: 1.4rem;
+    }
+  
+    .stat-item p {
+      font-size: 1rem;
+    }
+  
+    .stats-section {
+      flex-direction: column; /* Stack the stats section vertically */
+      padding: 1rem;
+      gap: 1rem;
+    }
+  
+    .stat-item {
+      flex: 1 1 90%; /* Stats should take almost full width */
+      margin-bottom: 1rem;
+    }
+  }
+  

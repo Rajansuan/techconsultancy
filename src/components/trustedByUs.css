@@ -1,0 +1,100 @@
+.trusted-by-us {
+    text-align: center;
+    margin-top: 3rem;
+  }
+  
+  .trusted-heading {
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    font-size: 48px;
+    color: #213344;
+  }
+  
+  .software-business-text {
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
+    color: #5d6c7c;
+    margin-top: -2rem;
+  }
+  
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem; /* Gap between logos */
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap; /* Allow logos to wrap on smaller screens */
+    justify-content: space-evenly;
+  }
+  
+  .logo {
+    max-width: 100%;
+    width: 12vw; /* Width is based on viewport width */
+    max-height: 40px; /* Ensure logos do not exceed this height */
+    height: auto;
+    object-fit: contain;
+  }
+  
+  /* Media queries for responsiveness */
+  @media (max-width: 1024px) {
+    .trusted-heading {
+      font-size: 36px;
+    }
+  
+    .software-business-text {
+      font-size: 16px;
+    }
+  
+    .logo-container {
+      gap: 50px; /* Adjust gap for smaller screens */
+    }
+  
+    .logo {
+      width: 15vw; /* Adjust logo width for medium screens */
+      max-height: 35px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .trusted-heading {
+      font-size: 32px;
+    }
+  
+    .software-business-text {
+      font-size: 14px;
+      margin-top: -0.7rem;
+      margin-bottom: 2rem;
+    }
+  
+    .logo-container {
+      gap: 40px; /* Further adjust gap for smaller screens */
+    }
+  
+    .logo {
+      width: 20vw; /* Adjust width for tablet screens */
+      max-height: 30px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .trusted-heading {
+      font-size: 28px;
+    }
+  
+    .software-business-text {
+      font-size: 14px;
+      margin-top: -0.7rem;
+      margin-bottom: 2rem;
+    }
+  
+    .logo-container {
+      gap: 30px; /* Adjust gap for mobile */
+      
+    }
+  
+    .logo {
+      width: 25vw; /* Adjust width to fit logos on small screens */
+      max-height: 25px;
+    }
+  }
+  

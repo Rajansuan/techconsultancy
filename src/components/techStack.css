@@ -1,0 +1,129 @@
+/* Section Styling */
+.tech-stack-section {
+    position: relative;
+    padding: 6rem 2rem;
+    color: white;
+    overflow: hidden;
+  }
+  
+  /* Scrollable Line Styling */
+  .tech-stack-line {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    animation: scroll-line 15s linear infinite; /* Increased duration to slow down */
+  }
+  
+  /* Left to Right */
+  .left-to-right {
+    animation: scroll-line 15s linear infinite; /* Increased duration for slower movement */
+    top: 0;
+  }
+  
+  /* Right to Left */
+  .right-to-left {
+    animation: scroll-line-reverse 15s linear infinite; /* Slower reverse scroll */
+    bottom: 0;
+    top: auto;
+  }
+  
+  /* Icon Container Styling */
+  .icon-container {
+    background-color: white;
+    border-radius: 50%;
+    padding: 1rem;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    margin: 0 2rem;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Hover Effect */
+  .icon-container:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Stylish Heading with Slide-Up Animation */
+  .stylish-heading {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #213344; /* Dark blue */
+    line-height: 1.4;
+    opacity: 0; /* Initially hidden for animation */
+    transform: translateY(50px); /* Start slightly below */
+    animation: slide-up 1.5s ease-in-out forwards;
+    margin-left: 4rem; /* Add left margin */
+  }
+  
+  /* Add more left margin for larger screens */
+  @media (min-width: 1024px) {
+    .stylish-heading {
+      margin-left: 8rem;
+      margin-top: 4rem;
+    }
+  }
+  
+  /* Highlight Styling */
+  .stylish-heading .highlighted {
+    position: relative;
+    color: #213344; /* Keep the text color */
+  }
+  
+  .stylish-heading .highlighted::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* Adjust this to control distance from text */
+    width: 100%;
+    height: 5px;
+    background-color: #ffc107; /* Yellow */
+    z-index: -1;
+    border-radius: 2px;
+  }
+  
+  /* Animations */
+  @keyframes slide-up {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes scroll-line {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  @keyframes scroll-line-reverse {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .icon-container {
+      padding: 0.75rem;
+      margin: 0 1rem;
+    }
+    .stylish-heading {
+      margin-left: 1.4rem;
+      margin-top: 1rem;
+      font-size: 1.4rem;
+    }
+  }
+  

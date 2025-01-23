@@ -7,6 +7,7 @@ import StatsSection from './components/StatsSection';
 import "./App.css";
 import TrustedByUs from "./components/TrustedByUs";
 import Services  from "./components/Services";
+import TechStack from "./components/TechStack";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
       <MiddleSection />
       <StatsSection />
       <TrustedByUs />
+      <TechStack />
       <Services />
       <Footer />
     </div>

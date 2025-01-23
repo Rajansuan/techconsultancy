@@ -6,6 +6,7 @@ import AnimatedCursor from "react-animated-cursor";
 import StatsSection from './components/StatsSection';
 import "./App.css";
 import TrustedByUs from "./components/TrustedByUs";
+import Services  from "./components/Services";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
       <MiddleSection />
       <StatsSection />
       <TrustedByUs />
+      <Services />
       <Footer />
     </div>
   );

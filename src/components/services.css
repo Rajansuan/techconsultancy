@@ -1,0 +1,136 @@
+/* Section Styling */
+.services-section {
+    position: relative;
+    padding: 6rem 2rem;
+    background: linear-gradient(145deg, #1f3b8c, #233b97, #3b51c4);
+    color: white;
+    overflow: hidden;
+}
+
+/* Container */
+.services-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    z-index: 2;
+    position: relative;
+}
+
+/* Header */
+.services-header {
+    margin-bottom: 3rem;
+}
+
+.services-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1rem;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.services-description {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    color: #d9e3f3;
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+/* Grid Layout */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+}
+
+/* Card Styling */
+.service-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0px 10px 20px rgba(35, 59, 151, 0.2);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::after {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: 0;
+    left: -100%;
+    background: rgba(35, 58, 151, 0.059);
+    transform: rotate(45deg);
+    transition: transform 0.4s ease;
+}
+
+.service-card:hover::after {
+    transform: rotate(45deg) translate(50%, 50%);
+}
+
+.service-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0px 12px 24px rgba(35, 59, 151, 0.3);
+}
+
+/* Card Content */
+.service-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #233b97;
+}
+
+.service-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #233b97;
+    margin-bottom: 0.5rem;
+}
+
+.service-description {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: #5d6c7c;
+    line-height: 1.6;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .services-title {
+        font-size: 2rem;
+    }
+
+    .services-description {
+        font-size: 1rem;
+    }
+
+    .service-card {
+        padding: 1.5rem;
+    }
+
+    .service-title {
+        font-size: 1.3rem;
+    }
+
+    .service-description {
+        font-size: 0.9rem;
+    }
+}

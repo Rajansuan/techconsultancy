@@ -8,6 +8,7 @@ import "./App.css";
 import TrustedByUs from "./components/TrustedByUs";
 import Services  from "./components/Services";
 import TechStack from "./components/TechStack";
+import GetInTouch from "./components/GetInTouch";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
       <TrustedByUs />
       <TechStack />
       <Services />
+      <GetInTouch />
       <Footer />
     </div>
   );

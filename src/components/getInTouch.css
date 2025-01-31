@@ -1,0 +1,166 @@
+/* Contact Form Container */
+.contact-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  min-height: 80vh;
+  padding: 4rem 2rem;
+}
+
+/* Left Side Image */
+.contact-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-responsive {
+  max-width: 100%;
+  height: auto;
+  width: 600px; /* Adjust size for desktop */
+}
+
+/* Right Side Contact Form */
+.contact-card {
+  flex: 1;
+  background: #ffffff;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 2.5rem;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  margin-right: 2rem;
+}
+
+/* Title */
+.contact-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+}
+
+/* Subtitle */
+.contact-subtitle {
+  font-size: 1rem;
+  color: #475569;
+  margin-bottom: 1.5rem;
+}
+
+/* Success Message */
+.contact-success {
+  color: #16a34a;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Input Groups */
+.input-group {
+  position: relative;
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+
+/* Fix Overlapping Issue */
+.input-group .input-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+  font-size: 1.2rem;
+  z-index: 10;
+}
+
+/* Input Fields */
+.input-field {
+  width: 100%;
+  padding: 12px 14px;
+  padding-left: 44px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+  background: white;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0px 0px 5px rgba(37, 99, 235, 0.5);
+}
+
+/* Textarea */
+.textarea {
+  height: 120px;
+  resize: none;
+}
+
+/* Submit Button */
+.submit-btn {
+  width: 100%;
+  background: #2563eb;
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  transition: background 0.3s ease-in-out;
+  cursor: pointer;
+  font-weight: bold;
+  border: none;
+}
+
+.submit-btn:hover {
+  background: #1e40af;
+}
+
+.submit-btn:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+}
+
+/* ✅ Responsive Design ✅ */
+@media (max-width: 900px) {
+  .contact-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact-image {
+    order: -1; /* Moves image on top in mobile */
+    margin-bottom: 2rem;
+  }
+
+  .image-responsive {
+    width: 300px; /* Smaller image on mobile */
+  }
+
+  .contact-card {
+    width: 90%;
+    padding: 2rem;
+    max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  }
+
+  .contact-title {
+    font-size: 1.75rem;
+  }
+
+  .input-field {
+    padding-left: 38px;
+    font-size: 14px;
+  }
+
+  .submit-btn {
+    padding: 10px;
+    font-size: 14px;
+  }
+}

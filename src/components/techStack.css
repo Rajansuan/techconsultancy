@@ -6,6 +6,11 @@
     overflow: hidden;
   }
   
+  .tech-stack-line
+  {
+    margin-bottom: 1.5rem;
+  }
+
   /* Scrollable Line Styling */
   .tech-stack-line {
     display: flex;

@@ -23,7 +23,7 @@ const Header = () => {
           ".link", // Custom classes
         ]}
       />
-      <div className="logo">Tech Firm</div>
+      <div className="logo">Codato</div>
 
       <nav>
         <ul className="nav-links">

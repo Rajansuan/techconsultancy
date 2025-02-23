@@ -4,7 +4,7 @@ import HomeImage from "../assets/images/Home.png"; // Assuming you have this ima
 
 const MiddleSection = () => {
   return (
-    <section className="middle-section">
+    <section className="middle-section" id="middle">
       <div className="text-content">
         <div className="text-items">
           <h2 className="mini-heading">GET THE MOST COMPREHENSIVE SOLUTIONS</h2>

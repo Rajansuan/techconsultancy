@@ -32,6 +32,20 @@
     color: #333;
 }
 
+/* Added hover effect */
+.nav-links li {
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-links li:hover {
+    font-weight: 700; /* Bold font */
+    font-size: 1.1rem; /* Slightly larger */
+    color: #233B97;
+    text-decoration: underline;
+    transform: scale(1.05); /* Smooth zoom effect */
+}
+
 .nav-links li a {
     text-decoration: none;
     color: inherit;
@@ -55,12 +69,13 @@
     font-weight: 500;
     border-radius: 22px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
     margin-right: 3rem;
 }
 
 .contact-button:hover {
     background-color: #0056b3;
+    transform: scale(1.05);
 }
 
 /* Burger Menu */
@@ -108,11 +123,15 @@
     text-decoration: none;
     font-size: 2rem;
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease-in-out;
 }
 
+/* Added hover effect for fullscreen nav links */
 .fullscreen-nav-links li a:hover {
-    color: #233B97;
+    font-weight: 700;
+    font-size: 2.2rem;
+    color: #ffdd57;
+    transform: scale(1.1);
 }
 
 /* Show the navigation menu when burger is clicked */

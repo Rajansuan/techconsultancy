@@ -4,6 +4,8 @@
     padding: 6rem 2rem;
     color: white;
     overflow: hidden;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
   }
   
   .tech-stack-line
@@ -67,7 +69,7 @@
   @media (min-width: 1024px) {
     .stylish-heading {
       margin-left: 8rem;
-      margin-top: 4rem;
+      margin-top: 6rem;
     }
   }
   
@@ -127,7 +129,7 @@
     }
     .stylish-heading {
       margin-left: 1.4rem;
-      margin-top: 1rem;
+      margin-top: 6rem;
       font-size: 1.4rem;
     }
   }

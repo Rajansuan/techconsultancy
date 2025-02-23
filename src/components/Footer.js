@@ -4,7 +4,7 @@ import AnimatedCursor from "react-animated-cursor";
 
 const Footer = () => {
   return (
-    <footer className="footer">
+    <footer className="footer" id='about'>
         <AnimatedCursor
         innerSize={8} /* Size of the inner circle */
         outerSize={35} /* Size of the outer circle */

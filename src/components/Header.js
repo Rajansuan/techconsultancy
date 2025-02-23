@@ -8,6 +8,13 @@ const Header = () => {
     setMenuOpen(!menuOpen);
   };
 
+  const handleScroll = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="header">
       <AnimatedCursor
@@ -27,25 +34,14 @@ const Header = () => {
 
       <nav>
         <ul className="nav-links">
-          <li>
-            <a href="#home">Home</a>
-          </li>
-          <li>
-            <a href="#about">About</a>
-          </li>
-          <li>
-            <a href="#services">Services</a>
-          </li>
-          <li>
-            <a href="#portfolio">Portfolio</a>
-          </li>
-          <li>
-            <a href="#blog">Blog</a>
-          </li>
+          <li onClick={() => handleScroll("middle")}>Home</li>
+          <li onClick={() => handleScroll("about")}>About</li>
+          <li onClick={() => handleScroll("services")}>Services</li>
+          <li onClick={() => handleScroll("techstack")}>Technology</li>
         </ul>
       </nav>
 
-      <button className="contact-button">Contact Us</button>
+          <button className="contact-button" onClick={() => handleScroll("contact")}>Contact Us</button>
 
       <div className="burger" onClick={toggleMenu}>
         <div className="burger-line"></div>
@@ -58,7 +54,7 @@ const Header = () => {
         <div className="fullscreen-menu">
           <ul className="fullscreen-nav-links">
             <li>
-              <a href="#home" onClick={toggleMenu}>
+              <a href="#middle" onClick={toggleMenu}>
                 Home
               </a>
             </li>
@@ -73,13 +69,13 @@ const Header = () => {
               </a>
             </li>
             <li>
-              <a href="#portfolio" onClick={toggleMenu}>
-                Portfolio
+              <a href="#techstack" onClick={toggleMenu}>
+                Technology
               </a>
             </li>
             <li>
-              <a href="#blog" onClick={toggleMenu}>
-                Blog
+              <a href="#contact" onClick={toggleMenu}>
+                Contact
               </a>
             </li>
           </ul>

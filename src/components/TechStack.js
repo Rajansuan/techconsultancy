@@ -15,7 +15,7 @@ import illustrator from "../assets/images/illustrator.png";
 
 const TechStack = () => {
   return (
-    <>
+    <section id="techstack">
       <h1 className="stylish-heading">
         Find the <span className="highlighted">Best</span> Technology for
         <br />
@@ -123,7 +123,7 @@ const TechStack = () => {
           </div>
         </div>
       </section>
-    </>
+    </section>
   );
 };
 

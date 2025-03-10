@@ -3,6 +3,13 @@ import "./middleSection.css";
 import HomeImage from "../assets/images/Home.png"; // Assuming you have this image
 
 const MiddleSection = () => {
+
+  const handleScroll = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <section className="middle-section" id="middle">
       <div className="text-content">
@@ -16,8 +23,8 @@ const MiddleSection = () => {
             Building Web and Mobile Apps with Advanced Tech and Generative AI.
           </div>
           <div className="btn-holder">
-            <button className="book-service-btn">Book a Service</button>
-            <button className="live-demo-btn">Get a live demo</button>
+            <button className="book-service-btn" onClick={() => handleScroll("contact")}>Book a Service</button>
+            {/* <button className="live-demo-btn">Get a live demo</button> */}
           </div>
           
         </div>

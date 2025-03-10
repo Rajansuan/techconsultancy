@@ -1,3 +1,4 @@
+/* Header */
 .header {
     position: fixed;
     top: 0;
@@ -14,17 +15,38 @@
     box-sizing: border-box;
 }
 
+/* Logo */
 .logo {
+    display: flex;
+    align-items: center;
     font-size: 1.5rem;
     font-weight: bold;
-    color: #233B97;
-    margin-left: 3rem;
+    color: #294bd1; 
+    gap: 0px;
+}
+
+.logo img {
+    filter: brightness(0) saturate(100%) invert(21%) sepia(83%) saturate(2100%) hue-rotate(220deg);
+    height: 37px;
+    width: auto;
+}
+
+.logo-text {
+    color: #294bd1;
+    font-weight: 600;
+}
+
+/* Navigation */
+.nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 3rem;
+    gap: 4rem;
     margin: 0;
     padding: 0;
     font-size: 1rem;
@@ -32,34 +54,20 @@
     color: #333;
 }
 
-/* Added hover effect */
 .nav-links li {
     cursor: pointer;
     transition: all 0.3s ease-in-out;
 }
 
 .nav-links li:hover {
-    font-weight: 700; /* Bold font */
-    font-size: 1.1rem; /* Slightly larger */
+    font-weight: 700;
+    font-size: 1.1rem;
     color: #233B97;
     text-decoration: underline;
-    transform: scale(1.05); /* Smooth zoom effect */
+    transform: scale(1.05);
 }
 
-.nav-links li a {
-    text-decoration: none;
-    color: inherit;
-    transition: color 0.3s ease;
-    font-weight: 500;
-}
-
-.nav-links li a:hover {
-    font-weight: 600;
-    font-size: medium;
-    color: #233B97;
-    text-decoration: underline;
-}
-
+/* Contact Button */
 .contact-button {
     background-color: #233B97;
     color: white;
@@ -70,7 +78,7 @@
     border-radius: 22px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    margin-right: 3rem;
+    margin-right: 2rem;
 }
 
 .contact-button:hover {
@@ -92,9 +100,8 @@
     background-color: #233B97;
 }
 
-/* Fullscreen Menu - Hidden by default */
+/* Fullscreen Menu */
 .fullscreen-menu {
-    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -103,12 +110,19 @@
     background-color: #233a97dc;
     color: white;
     z-index: 1001;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
 }
 
-/* Menu options inside fullscreen menu */
+.fullscreen-menu.active {
+    transform: translateY(0);
+}
+
 .fullscreen-nav-links {
     list-style: none;
     padding: 0;
@@ -126,7 +140,6 @@
     transition: all 0.3s ease-in-out;
 }
 
-/* Added hover effect for fullscreen nav links */
 .fullscreen-nav-links li a:hover {
     font-weight: 700;
     font-size: 2.2rem;
@@ -134,52 +147,34 @@
     transform: scale(1.1);
 }
 
-/* Show the navigation menu when burger is clicked */
-.nav.active {
-    display: block;
-}
-
-/* By default, links should be horizontal on large screens */
-.nav-links {
-    display: flex;
-    gap: 1rem;
-    text-align: center;
-}
-
-/* Media queries for responsive behavior */
-@media (max-width: 768px) {
-    /* For mobile screens, hide the links by default */
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
     .nav-links {
-        display: none;
-        flex-direction: column;
-        text-align: left;
-        width: 100%;
+        gap: 2rem;
     }
+}
 
-    /* When the menu is active, show the links vertically */
-    .nav.active .nav-links {
-        display: flex;
+@media (max-width: 768px) {
+    .nav {
+        display: none;
     }
 
     .burger {
         display: flex;
-    }
-
-    .header {
-        height: auto;
-        padding: 1rem;
-    }
-
-    .logo {
-        margin-left: 1rem;
+        margin-right: 1rem;
     }
 
     .contact-button {
-        margin-right: 1rem;
+        font-size: 0.8rem;
+        padding: 0.4rem 1rem;
+        border-radius: 18px;
+        margin-right: -3rem;
     }
-    
-    /* When the menu is open, show fullscreen overlay */
+
     .fullscreen-menu {
         display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 }

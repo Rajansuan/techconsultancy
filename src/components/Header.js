@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./header.css";
 import AnimatedCursor from "react-animated-cursor";
+import imgLogo from "../assets/images/codato-logo.png";
+
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -12,27 +14,30 @@ const Header = () => {
     const section = document.getElementById(id);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
+      setMenuOpen(false); // Close menu on navigation
     }
   };
 
   return (
     <div className="header">
       <AnimatedCursor
-        innerSize={8} /* Size of the inner circle */
-        outerSize={35} /* Size of the outer circle */
-        color="35, 59, 151" /* RGB color of the cursor */
-        outerAlpha={0.3} /* Transparency of the outer circle */
-        innerScale={1.2} /* Scale effect when hovering */
-        outerScale={1.5} /* Scale effect when hovering */
-        clickables={[
-          "a", // Links
-          "button", // Buttons
-          ".link", // Custom classes
-        ]}
+        innerSize={8}
+        outerSize={35}
+        color="35, 59, 151"
+        outerAlpha={0.3}
+        innerScale={1.2}
+        outerScale={1.5}
+        clickables={["a", "button", ".link"]}
       />
-      <div className="logo">Codato</div>
 
-      <nav>
+      {/* Logo Section */}
+      <div className="logo">
+        <img src={imgLogo} alt="Logo" className="logo-image" />
+        <span className="logo-text">Codato</span>
+      </div>
+
+      {/* Desktop Navigation */}
+      <nav className="nav">
         <ul className="nav-links">
           <li onClick={() => handleScroll("middle")}>Home</li>
           <li onClick={() => handleScroll("about")}>About</li>
@@ -41,8 +46,12 @@ const Header = () => {
         </ul>
       </nav>
 
-          <button className="contact-button" onClick={() => handleScroll("contact")}>Contact Us</button>
+      {/* Contact Button */}
+      <button className="contact-button" onClick={() => handleScroll("contact")}>
+        Contact Us
+      </button>
 
+      {/* Burger Menu */}
       <div className="burger" onClick={toggleMenu}>
         <div className="burger-line"></div>
         <div className="burger-line"></div>
@@ -50,37 +59,15 @@ const Header = () => {
       </div>
 
       {/* Full screen menu overlay */}
-      {menuOpen && (
-        <div className="fullscreen-menu">
-          <ul className="fullscreen-nav-links">
-            <li>
-              <a href="#middle" onClick={toggleMenu}>
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="#about" onClick={toggleMenu}>
-                About
-              </a>
-            </li>
-            <li>
-              <a href="#services" onClick={toggleMenu}>
-                Services
-              </a>
-            </li>
-            <li>
-              <a href="#techstack" onClick={toggleMenu}>
-                Technology
-              </a>
-            </li>
-            <li>
-              <a href="#contact" onClick={toggleMenu}>
-                Contact
-              </a>
-            </li>
-          </ul>
-        </div>
-      )}
+      <div className={`fullscreen-menu ${menuOpen ? "active" : ""}`}>
+        <ul className="fullscreen-nav-links">
+          <li><a href="#middle" onClick={() => handleScroll("middle")}>Home</a></li>
+          <li><a href="#about" onClick={() => handleScroll("about")}>About</a></li>
+          <li><a href="#services" onClick={() => handleScroll("services")}>Services</a></li>
+          <li><a href="#techstack" onClick={() => handleScroll("techstack")}>Technology</a></li>
+          <li><a href="#contact" onClick={() => handleScroll("contact")}>Contact</a></li>
+        </ul>
+      </div>
     </div>
   );
 };

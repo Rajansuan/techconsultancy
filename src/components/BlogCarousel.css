@@ -18,6 +18,8 @@
     justify-content: center;
     max-width: 90%;
     margin: 0 auto;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
   }
   
   /* Left & Right Navigation Buttons */

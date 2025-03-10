@@ -151,7 +151,7 @@ span {
     }
 
     .image-content {
-        max-width: 40%;
+        max-width: 45%;
     }
 
     .transform-text {
@@ -160,6 +160,11 @@ span {
 
     .building-text {
         font-size: 3vw;
+    }
+
+    .main-image{
+        height: 400px;
+        width: auto;
     }
 }
 

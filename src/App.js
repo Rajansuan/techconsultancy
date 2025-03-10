@@ -9,6 +9,7 @@ import TrustedByUs from "./components/TrustedByUs";
 import Services  from "./components/Services";
 import TechStack from "./components/TechStack";
 import GetInTouch from "./components/GetInTouch";
+import BlogCarousel from "./components/BlogCarousel";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
       <TrustedByUs />
       <TechStack />
       <Services />
+      <BlogCarousel />
       <GetInTouch />
       <Footer />
     </div>

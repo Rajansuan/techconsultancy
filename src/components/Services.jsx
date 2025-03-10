@@ -1,37 +1,38 @@
-import React from 'react';
-import './services.css';
+import React from "react";
+import "./services.css";
+import { FaCloud, FaLock, FaChartLine, FaBrain, FaBusinessTime, FaTools } from "react-icons/fa";
 
 const services = [
   {
     title: "Digital Transformation",
-    description: "Transform your business with cutting-edge digital solutions and strategies.",
-    icon: "💡"
+    description: "Empower your business with cutting-edge digital strategies.",
+    icon: <FaTools />,
   },
   {
     title: "Cloud Solutions",
     description: "Optimize your infrastructure with secure and scalable cloud services.",
-    icon: "☁️"
+    icon: <FaCloud />,
   },
   {
     title: "Data Analytics",
-    description: "Turn your data into actionable insights with advanced analytics.",
-    icon: "📊"
+    description: "Turn data into insights with powerful analytics and AI-driven solutions.",
+    icon: <FaChartLine />,
   },
   {
     title: "Cybersecurity",
-    description: "Protect your business with comprehensive security solutions.",
-    icon: "🔒"
+    description: "Protect your business with state-of-the-art security solutions.",
+    icon: <FaLock />,
   },
   {
     title: "AI & Machine Learning",
     description: "Leverage AI to automate and enhance your business processes.",
-    icon: "🤖"
+    icon: <FaBrain />,
   },
   {
     title: "IT Consulting",
     description: "Strategic technology consulting to drive business growth.",
-    icon: "💼"
-  }
+    icon: <FaBusinessTime />,
+  },
 ];
 
 const Services = () => {
@@ -39,9 +40,9 @@ const Services = () => {
     <section id="services" className="services-section">
       <div className="services-container">
         <div className="services-header">
-          <h2 className="services-title">Our Services</h2>
+          <h2 className="services-title">Our Expertise</h2>
           <p className="services-description">
-            We offer expertly designed solutions that align with your business goals.
+            We craft tailored technology solutions that drive success and innovation.
           </p>
         </div>
 

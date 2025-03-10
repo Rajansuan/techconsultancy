@@ -1,121 +1,129 @@
 /* Section Styling */
 .services-section {
     position: relative;
-    padding: 6rem 2rem;
-    background: linear-gradient(145deg, #1f3b8c, #233b97, #3b51c4);
-    color: white;
-    overflow: hidden;
+    padding: 5rem 2rem;
+    background: #f8f9fc; /* Light gray for a subtle professional feel */
+    color: #233b97;
+    text-align: center;
 }
 
 /* Container */
 .services-container {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
-    text-align: center;
-    z-index: 2;
-    position: relative;
 }
 
 /* Header */
 .services-header {
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
 }
 
 .services-title {
     font-family: 'Poppins', sans-serif;
     font-size: 2.5rem;
     font-weight: 700;
-    color: white;
-    margin-bottom: 1rem;
-    animation: fadeIn 1s ease-in-out;
+    color: #1f2d5c;
+    position: relative;
+}
+
+.services-title::after {
+    content: "";
+    width: 70px;
+    height: 3px;
+    background: #294bd1;
+    position: absolute;
+    left: 50%;
+    bottom: -8px;
+    transform: translateX(-50%);
+    border-radius: 2px;
 }
 
 .services-description {
     font-family: 'Poppins', sans-serif;
     font-size: 1.1rem;
-    color: #d9e3f3;
-    animation: fadeIn 1.2s ease-in-out;
+    color: #5d6c7c;
+    margin-top: 0.8rem;
 }
 
 /* Grid Layout */
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 2rem;
-    justify-items: center;
 }
 
 /* Card Styling */
 .service-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0px 10px 20px rgba(35, 59, 151, 0.2);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    cursor: pointer;
+    background: #ffffff;
+    padding: 1.8rem;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    border-left: 4px solid transparent;
+    max-width: 290px;
+    margin: auto;
     position: relative;
     overflow: hidden;
 }
 
-.service-card::after {
-    content: '';
+/* Hover Effect - Diagonal Gradient */
+.service-card::before {
+    content: "";
     position: absolute;
-    width: 200%;
-    height: 200%;
     top: 0;
-    left: -100%;
-    background: rgba(35, 58, 151, 0.059);
-    transform: rotate(45deg);
-    transition: transform 0.4s ease;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom right, rgba(41, 75, 209, 0.099), rgba(41, 75, 209, 0));
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+    z-index: -1;
 }
 
-.service-card:hover::after {
-    transform: rotate(45deg) translate(50%, 50%);
+.service-card:hover::before {
+    opacity: 1;
 }
 
+/* Hover Effect - Subtle Lift */
 .service-card:hover {
-    transform: translateY(-10px) scale(1.05);
-    box-shadow: 0px 12px 24px rgba(35, 59, 151, 0.3);
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 20px rgba(35, 59, 151, 0.15);
+    border-left: 4px solid #294bd1;
 }
 
 /* Card Content */
 .service-icon {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    color: #233b97;
+    font-size: 2.6rem;
+    margin-bottom: 0.8rem;
+    color: #294bd1;
 }
 
 .service-title {
     font-family: 'Poppins', sans-serif;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 600;
-    color: #233b97;
-    margin-bottom: 0.5rem;
+    color: #1f2d5c;
+    margin-bottom: 0.4rem;
 }
 
 .service-description {
     font-family: 'Poppins', sans-serif;
-    font-size: 1rem;
+    font-size: 0.95rem;
     color: #5d6c7c;
-    line-height: 1.6;
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    line-height: 1.5;
 }
 
 /* Responsive Design */
+@media (max-width: 1024px) {
+    .services-grid {
+        gap: 1.5rem;
+    }
+}
+
 @media (max-width: 768px) {
     .services-title {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
 
     .services-description {
@@ -123,7 +131,8 @@
     }
 
     .service-card {
-        padding: 1.5rem;
+        padding: 1.6rem;
+        max-width: 270px;
     }
 
     .service-title {
@@ -132,5 +141,28 @@
 
     .service-description {
         font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .services-title {
+        font-size: 2rem;
+    }
+
+    .services-description {
+        font-size: 0.95rem;
+    }
+
+    .service-card {
+        padding: 1.4rem;
+        max-width: 260px;
+    }
+
+    .service-title {
+        font-size: 1.2rem;
+    }
+
+    .service-description {
+        font-size: 0.85rem;
     }
 }

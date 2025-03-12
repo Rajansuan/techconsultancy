@@ -178,7 +178,7 @@ span {
         flex-direction: column;
         text-align: center;
         padding: 2rem;
-        width: 90%;
+        width: 80%;
         margin: 0 auto;
     }
 
@@ -189,13 +189,15 @@ span {
     }
 
     .image-content {
-        max-width: 85%;
+        max-width: 100%;
         margin-bottom: 2rem;
     }
 
     .main-image {
-        max-width: 85%;
+        max-width: 100%;
         height: auto;
+        margin-top: 2rem;
+        margin-left: 2rem;
     }
 
     /* Adjust buttons for mobile */

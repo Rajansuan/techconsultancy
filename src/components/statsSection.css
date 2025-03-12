@@ -1,115 +1,130 @@
+/* 🚀 Stats Section Layout */
 .stats-section {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap; /* Allow wrapping for smaller screens */
-    text-align: center; /* Ensure alignment is centered */
-    margin-left: 4rem;
-    margin-right: 4rem;
-  }
-  
-  .stat-item {
-    font-family: "Poppins", sans-serif;
-    flex: 1 1 22%; /* Allow flexibility for stat items */
-    min-width: 150px; /* Prevent them from getting too small */
-  }
-  
-  .countup {
-    display: inline-flex;
-    align-items: center;
-  }
-  
-  .countup-number {
-    font-size: 1.8rem; /* Default font size for desktop */
-    font-weight: bold;
-    color: #233b97;
-  }
-  
-  .plus-sign {
-    font-size: 2rem;
-    margin-left: 0.5rem;
-    font-weight: normal;
-  }
-  
-  .stat-item p {
-    font-size: 1.2rem;
-    color: #333;
-    margin-top: 0.5rem;
-  }
-  
-  /* Media queries for responsiveness */
-  @media (max-width: 1024px) {
-    .countup-number {
-      font-size: 1.8rem; /* Slightly smaller for medium-sized screens */
-    }
-  
-    .plus-sign {
-      font-size: 1.8rem;
-    }
-  
-    .stat-item p {
-      font-size: 1.2rem;
-    }
-  
-    .stats-section {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Default: 4 stats in a row */
+  gap: 2rem; /* Space between items */
+  text-align: center;
+  margin: 4rem;
+  max-width: 100%;
+}
+
+/* Stat Item */
+.stat-item {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 150px;
+}
+
+/* Counter Display */
+.countup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+}
+
+/* Number Styling */
+.countup-number {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #233b97;
+}
+
+/* Plus Sign */
+.plus-sign {
+  font-size: 2rem;
+}
+
+/* Description Text */
+.stat-item p {
+  font-size: 1.2rem;
+  color: #333;
+  margin-top: 0.5rem;
+  min-height: 50px; /* Forces equal height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 📌 Responsive Design */
+
+/* Tablet & Small Desktop Screens */
+@media (max-width: 1024px) {
+  .stats-section {
+      grid-template-columns: repeat(2, 1fr); /* Two stats per row */
       padding: 2rem;
-      justify-content: center;
-    }
-  
-    .stat-item {
-      flex: 1 1 45%; /* Two items per row */
-      margin-bottom: 1rem;
-    }
+      gap: 1.5rem;
   }
-  
-  @media (max-width: 768px) {
-    .countup-number {
-      font-size: 1.6rem; /* Smaller size for tablets */
-    }
-  
-    .plus-sign {
-      font-size: 1.6rem;
-    }
-  
-    .stat-item p {
-      font-size: 1.1rem;
-    }
-  
-    .stats-section {
-      flex-direction: column; /* Stack the stats section vertically on mobile */
-      align-items: center; /* Center the items */
-      justify-content: center;
+
+  .countup-number {
+      font-size: 1.8rem;
+  }
+
+  .plus-sign {
+      font-size: 1.8rem;
+  }
+
+  .stat-item p {
+      font-size: 1.2rem;
+  }
+}
+
+/* 📱 Mobile View: Two Stats Per Row */
+@media (max-width: 768px) {
+  .stats-section {
+      grid-template-columns: repeat(2, 1fr); /* Two stats in one row */
       padding: 2rem 1rem;
       gap: 1rem;
-    }
-  
-    .stat-item {
-      flex: 1 1 90%; /* Stats should take almost full width */
-      margin-bottom: 1rem; /* Space between items */
-    }
   }
-  
-  @media (max-width: 480px) {
-    .countup-number {
-      font-size: 1.4rem; /* Smaller size for mobile */
-    }
-  
-    .plus-sign {
-      font-size: 1.4rem;
-    }
-  
-    .stat-item p {
-      font-size: 1rem;
-    }
-  
-    .stats-section {
-      flex-direction: column; /* Stack the stats section vertically */
-      padding: 1rem;
-      gap: 1rem;
-    }
-  
-    .stat-item {
-      flex: 1 1 90%; /* Stats should take almost full width */
-      margin-bottom: 1rem;
-    }
+
+  .stat-item {
+      max-width: 100%;
   }
-  
+
+  .countup-number {
+      font-size: 1.6rem;
+  }
+
+  .plus-sign {
+      font-size: 1.6rem;
+  }
+
+  .stat-item p {
+      font-size: 1.1rem;
+  }
+}
+
+/* 📱 Small Mobile Screens (iPhone 12 Pro, 14 Pro, etc.) */
+@media (max-width: 480px) {
+  .stats-section {
+      grid-template-columns: repeat(2, 1fr); /* Still two stats per row */
+      padding: 0.2rem;
+      gap: 0.2rem;
+      width: 90%;
+      margin: 0 auto;
+  }
+
+  .stat-item {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+  }
+
+  .countup-number {
+      font-size: 1.7em;
+  }
+
+  .plus-sign {
+      font-size: 1.7rem;
+  }
+
+  .stat-item p {
+      font-size: 0.8rem;
+      min-height: 50px; /* Ensures perfect alignment */
+  }
+}

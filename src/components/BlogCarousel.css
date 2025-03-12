@@ -252,8 +252,9 @@
 
   /* Popup for Mobile */
   .popup-content {
-    width: 80%;
+    width: 70%;
     padding: 1.5rem;
+    margin-left: -2rem;
   }
 
   .popup-close {

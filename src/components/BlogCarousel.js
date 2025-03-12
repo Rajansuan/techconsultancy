@@ -4,63 +4,56 @@ import "./BlogCarousel.css";
 const blogs = [
   {
     id: 1,
-    title: "AI in Modern Technology",
-    summary: "Discover how AI is transforming various industries.",
+    title: "Revolutionizing AI in 2025",
+    author: "John Doe",
+    summary: "AI is shaping the future of business and innovation.",
     content:
-      "Artificial Intelligence (AI) is reshaping industries by enhancing efficiency, reducing costs, and unlocking new possibilities. From healthcare to finance, AI-driven solutions are making a significant impact.",
-    image: "https://picsum.photos/300/400?random=1",
+      "Artificial Intelligence is evolving rapidly, influencing multiple industries from finance to healthcare. AI-driven automation and decision-making are now integral to business growth.",
+    image: "https://picsum.photos/600/400?random=1",
   },
   {
     id: 2,
-    title: "The Future of Web Development",
-    summary: "Explore the latest trends in web development.",
+    title: "Modern Web Development Trends",
+    author: "Jane Smith",
+    summary: "Learn about the latest tools and frameworks.",
     content:
-      "Web development is evolving with new frameworks, technologies, and design trends. Learn how businesses can stay ahead with modern tools like React, Next.js, and serverless architectures.",
-    image: "https://picsum.photos/300/400?random=2",
+      "Web development is undergoing massive transformations with the introduction of Next.js, serverless functions, and AI-powered coding assistants.",
+    image: "https://picsum.photos/600/400?random=2",
   },
   {
     id: 3,
-    title: "Cybersecurity in 2025",
-    summary: "Why cybersecurity is more important than ever.",
+    title: "Cybersecurity & Digital Safety",
+    author: "David Brown",
+    summary: "Stay ahead of cyber threats in the digital age.",
     content:
-      "With growing cyber threats, businesses must implement advanced security measures. Encryption, AI-powered threat detection, and zero-trust security models are becoming the new standard.",
-    image: "https://picsum.photos/300/400?random=3",
+      "Cybersecurity remains a top priority as digital threats grow. Businesses must adopt encryption, multi-factor authentication, and AI-driven security measures.",
+    image: "https://picsum.photos/600/400?random=3",
   },
   {
     id: 4,
-    title: "Cloud Computing Trends",
-    summary: "How cloud computing is changing businesses.",
+    title: "The Rise of Cloud Computing",
+    author: "Emma Wilson",
+    summary: "Explore the benefits of cloud technology.",
     content:
-      "Cloud computing is enabling businesses to scale efficiently. Learn about hybrid cloud models, serverless computing, and the benefits of multi-cloud strategies.",
-    image: "https://picsum.photos/300/400?random=4",
-  },
-  {
-    id: 5,
-    title: "Blockchain Beyond Cryptocurrency",
-    summary: "How blockchain is revolutionizing industries.",
-    content:
-      "Blockchain is not just about cryptocurrencies. It's being used in supply chain management, healthcare, and secure transactions to bring transparency and efficiency.",
-    image: "https://picsum.photos/300/400?random=5",
-  },
-  {
-    id: 6,
-    title: "The Rise of Remote Work",
-    summary: "Why remote work is here to stay.",
-    content:
-      "The pandemic accelerated the shift to remote work. Learn about the best remote work tools, productivity hacks, and how companies are adapting to this new normal.",
-    image: "https://picsum.photos/300/400?random=6",
+      "Cloud computing is revolutionizing businesses with its scalability and cost efficiency. Hybrid cloud models are gaining momentum.",
+    image: "https://picsum.photos/600/400?random=4",
   },
 ];
 
 const BlogCarousel = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [showPopup, setShowPopup] = useState(false);
   const carouselRef = useRef(null);
 
   useEffect(() => {
     if (carouselRef.current) {
       const selectedCard = carouselRef.current.children[selectedIndex];
       if (selectedCard) {
-        selectedCard.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+        selectedCard.scrollIntoView({
+          behavior: "smooth",
+          block: "nearest",
+          inline: "center",
+        });
       }
     }
   }, [selectedIndex]);
@@ -77,9 +70,18 @@ const BlogCarousel = () => {
     );
   };
 
+  const handleCardClick = (index) => {
+    setSelectedIndex(index);
+    setShowPopup(true);
+  };
+
+  const closePopup = () => {
+    setShowPopup(false);
+  };
+
   return (
     <section className="blog-section">
-      <h2 className="blog-heading">Latest Blog Posts</h2>
+      <h2 className="blog-heading">Latest Blogs</h2>
       <div className="carousel-container">
         <button className="nav-button left" onClick={handlePrev}>
           ❮
@@ -90,7 +92,7 @@ const BlogCarousel = () => {
             <div
               key={blog.id}
               className={`blog-card ${index === selectedIndex ? "active" : ""}`}
-              onClick={() => setSelectedIndex(index)}
+              onClick={() => handleCardClick(index)}
             >
               <img src={blog.image} alt={blog.title} className="blog-image" />
               <div className="blog-details">
@@ -106,11 +108,25 @@ const BlogCarousel = () => {
         </button>
       </div>
 
-      {/* Selected Blog Content */}
-      <div className="selected-blog-content">
-        <h3>{blogs[selectedIndex].title}</h3>
-        <p>{blogs[selectedIndex].content}</p>
-      </div>
+      {showPopup && (
+        <div className="popup-overlay" onClick={closePopup}>
+          <div className="popup-content" onClick={(e) => e.stopPropagation()}>
+            <button className="popup-close" onClick={closePopup}>
+              ✖
+            </button>
+            <img
+              src={blogs[selectedIndex].image}
+              alt={blogs[selectedIndex].title}
+              className="popup-image"
+            />
+            <div className="popup-details">
+              <h3>{blogs[selectedIndex].title}</h3>
+              <p className="popup-author">By {blogs[selectedIndex].author}</p>
+              <p>{blogs[selectedIndex].content}</p>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

@@ -82,6 +82,10 @@ const BlogCarousel = () => {
   return (
     <section className="blog-section">
       <h2 className="blog-heading">Latest Blogs</h2>
+      <hr className="hr-line" />
+      <p className="services-description">
+      Check out our latest blog updates! 
+          </p>
       <div className="carousel-container">
         <button className="nav-button left" onClick={handlePrev}>
           ❮

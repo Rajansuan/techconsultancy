@@ -5,11 +5,27 @@
   overflow: hidden;
 }
 
+
 .blog-heading {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 1.5rem;
-  color: #333;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1f2d5c;
+  margin-bottom: 0.4rem;
+}
+
+.hr-line{
+  border: none;
+  height: 0.2rem;
+  background: #294bd1;
+  width: 4rem;
+}
+
+.service-description {
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  color: #5d6c7c;
+  line-height: 1.5;
 }
 
 /* Carousel Container */
@@ -41,6 +57,8 @@
   transition: 0.3s;
   z-index: 10;
 }
+
+
 
 .nav-button.left {
   left: -25px;
@@ -201,6 +219,12 @@
 
 /* ✅ Fully Responsive Design ✅ */
 @media (max-width: 768px) {
+
+  .blog-heading{
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  
   .blog-section {
     font-size: 1rem;
   }
@@ -211,6 +235,7 @@
     margin-bottom: -1rem;
   }
 
+ 
   .carousel {
     flex-direction: row;
     overflow-x: auto;
@@ -243,11 +268,11 @@
   }
 
   .nav-button.left {
-    left: 5px;
+    left: -2rem;
   }
 
   .nav-button.right {
-    right: 5px;
+    right: -2rem;
   }
 
   /* Popup for Mobile */

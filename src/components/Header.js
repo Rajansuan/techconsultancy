@@ -43,6 +43,7 @@ const Header = () => {
           <li onClick={() => handleScroll("about")}>About</li>
           <li onClick={() => handleScroll("services")}>Services</li>
           <li onClick={() => handleScroll("techstack")}>Technology</li>
+          <li onClick={() => handleScroll("blogs")}>Blogs</li>
         </ul>
       </nav>
 
@@ -65,6 +66,7 @@ const Header = () => {
           <li><a href="#about" onClick={() => handleScroll("about")}>About</a></li>
           <li><a href="#services" onClick={() => handleScroll("services")}>Services</a></li>
           <li><a href="#techstack" onClick={() => handleScroll("techstack")}>Technology</a></li>
+          <li><a href="#blogs" onClick={() => handleScroll("blogs")}>Blogs</a></li>
           <li><a href="#contact" onClick={() => handleScroll("contact")}>Contact</a></li>
         </ul>
       </div>

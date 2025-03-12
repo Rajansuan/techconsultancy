@@ -46,7 +46,7 @@ const BlogCarousel = () => {
   const carouselRef = useRef(null);
 
   useEffect(() => {
-    if (carouselRef.current) {
+    if (carouselRef.current && selectedIndex !== 0) { 
       const selectedCard = carouselRef.current.children[selectedIndex];
       if (selectedCard) {
         selectedCard.scrollIntoView({
@@ -57,6 +57,7 @@ const BlogCarousel = () => {
       }
     }
   }, [selectedIndex]);
+  
 
   const handlePrev = () => {
     setSelectedIndex((prevIndex) =>
@@ -80,7 +81,7 @@ const BlogCarousel = () => {
   };
 
   return (
-    <section className="blog-section">
+    <section className="blog-section" id='blogs'>
       <h2 className="blog-heading">Latest Blogs</h2>
       <hr className="hr-line" />
       <p className="services-description">

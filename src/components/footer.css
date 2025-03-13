@@ -1,177 +1,373 @@
 /* Global Footer Styles */
+body, html {
+  cursor: default !important;
+}
+.modal-content{
+  color: #233b97;
+}
 .footer {
-    background-color: #233b97;
-    color: white;
-    padding: 4rem 2rem;
-    font-family: 'Poppins', sans-serif;
-  }
-  
+  background-color: #233b97;
+  color: white;
+  padding: 4rem 2rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  justify-content: space-between;
+}
+
+.footer-logo {
+  flex: 1;
+  max-width: 25%;
+}
+
+.footer-logo-text {
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.footer-description {
+  font-size: 1rem;
+  color: #d0d0d0;
+  line-height: 1.5;
+}
+
+.footer-section-title {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.footer-services,
+.footer-explore,
+.footer-contact {
+  flex: 1;
+  max-width: 20%;
+}
+
+.footer-services ul,
+.footer-explore ul,
+.footer-contact ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-services li,
+.footer-explore li,
+.footer-contact li {
+  margin-bottom: 1rem;
+}
+
+.footer-services a,
+.footer-explore a,
+.footer-contact a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.footer-services a:hover,
+.footer-explore a:hover,
+.footer-contact a:hover {
+  color: #fbd95e;
+}
+
+/* Footer Bottom Section */
+.footer-bottom {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.social-icon {
+  font-size: 1.5rem;
+  color: white;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+  color: #fbd95e;
+}
+
+.footer-legal {
+  margin-bottom: 1rem;
+  color: #d0d0d0;
+}
+
+.footer-legal a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer-legal a:hover {
+  color: #fbd95e;
+}
+
+.footer-copy {
+  font-size: 0.9rem;
+  color: #d0d0d0;
+}
+
+/* Animated Terms & Conditions Link */
+.terms-link {
+  background: none;
+  border: none;
+  color: #fbd95e;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  padding: 5px;
+}
+
+.terms-link:hover {
+  text-decoration: underline;
+  color: #ffcc00;
+}
+
+/* Adding subtle animated underline effect */
+.terms-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 2px;
+  background-color: #fbd95e;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.terms-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in-out;
+  padding: 10px;
+}
+
+/* Modal Content */
+.modal-content {
+  background: white;
+  padding: 15px;
+  width: 45%;
+  max-width: 550px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  position: relative;
+  animation: slideIn 0.4s ease-in-out;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  font-size: 22px;
+  border-bottom: 2px solid #007bff;
+  padding-bottom: 5px;
+}
+
+.modal-content h3 {
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.modal-content p {
+  font-size: 13px;
+  color: #555;
+  line-height: 1.4;
+  margin-bottom: 8px;
+}
+
+/* Close Button */
+.modal-close {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  font-size: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.modal-close:hover {
+  background: rgba(255, 87, 51, 0.2); /* Light red circle */
+  color: #ff5733;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
   .footer-top {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 3rem;
-    justify-content: space-between;
+    gap: 2rem;
+    flex-direction: column;
+    align-items: center;
   }
-  
+
   .footer-logo {
-    flex: 1;
-    max-width: 25%;
+    max-width: 100%;
+    text-align: center;
   }
-  
-  .footer-logo-text {
-    font-size: 2rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #ffffff;
-    margin-bottom: 1rem;
-  }
-  
-  .footer-description {
-    font-size: 1rem;
-    color: #d0d0d0;
-    line-height: 1.5;
-  }
-  
-  .footer-section-title {
-    font-size: 1.2rem;
-    font-weight: 500;
-    margin-bottom: 1rem;
-  }
-  
+
   .footer-services,
   .footer-explore,
   .footer-contact {
-    flex: 1;
-    max-width: 20%;
+    max-width: 100%;
+    text-align: center;
   }
-  
-  .footer-services ul,
-  .footer-explore ul,
-  .footer-contact ul {
-    list-style: none;
-    padding: 0;
+
+  .modal-content {
+    width: 55%;
+    max-width: 500px;
+    padding: 12px;
   }
-  
-  .footer-services li,
-  .footer-explore li,
-  .footer-contact li {
-    margin-bottom: 1rem;
+
+  .modal-content h2 {
+    font-size: 20px;
   }
-  
+
+  .modal-content h3 {
+    font-size: 15px;
+  }
+
+  .modal-content p {
+    font-size: 12.5px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-logo-text {
+    font-size: 1.5rem;
+  }
+
+  .footer-description {
+    font-size: 0.9rem;
+  }
+
   .footer-services a,
   .footer-explore a,
   .footer-contact a {
-    color: #ffffff;
-    text-decoration: none;
-  }
-  
-  .footer-services a:hover,
-  .footer-explore a:hover,
-  .footer-contact a:hover {
-    color: #fbd95e; /* Subtle hover color */
-  }
-  
-  .footer-bottom {
-    margin-top: 3rem;
-    text-align: center;
-  }
-  
-  .footer-social {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 1rem;
-  }
-  
-  .social-icon {
-    font-size: 1.5rem;
-    color: white;
-    transition: transform 0.3s ease;
-  }
-  
-  .social-icon:hover {
-    transform: scale(1.1);
-    color: #fbd95e; /* Yellow hover color */
-  }
-  
-  .footer-legal {
-    margin-bottom: 1rem;
-    color: #d0d0d0;
-  }
-  
-  .footer-legal a {
-    color: #ffffff;
-    text-decoration: none;
-  }
-  
-  .footer-legal a:hover {
-    color: #fbd95e; /* Subtle hover color */
-  }
-  
-  .footer-copy {
     font-size: 0.9rem;
-    color: #d0d0d0;
   }
-  
-  /* Responsive Styles */
-  @media (max-width: 1024px) {
-    .footer-top {
-      gap: 2rem;
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .footer-logo {
-      max-width: 100%;
-      text-align: center;
-    }
-  
-    .footer-services,
-    .footer-explore,
-    .footer-contact {
-      max-width: 100%;
-      text-align: center;
-    }
+
+  .footer-copy {
+    font-size: 0.8rem;
   }
-  
-  @media (max-width: 768px) {
-    .footer-logo-text {
-      font-size: 1.5rem;
-    }
-  
-    .footer-description {
-      font-size: 0.9rem;
-    }
-  
-    .footer-services a,
-    .footer-explore a,
-    .footer-contact a {
-      font-size: 0.9rem;
-    }
-  
-    .footer-copy {
-      font-size: 0.8rem;
-    }
+
+  .modal-content {
+    width: 70%;
+    max-width: 450px;
+    padding: 10px;
   }
-  
-  @media (max-width: 480px) {
-    .footer-logo-text {
-      font-size: 1.2rem;
-    }
-  
-    .footer-description {
-      font-size: 0.8rem;
-    }
-  
-    .footer-services a,
-    .footer-explore a,
-    .footer-contact a {
-      font-size: 0.8rem;
-    }
-  
-    .footer-copy {
-      font-size: 0.7rem;
-    }
+
+  .modal-content h2 {
+    font-size: 18px;
   }
-  
+
+  .modal-content h3 {
+    font-size: 14px;
+  }
+
+  .modal-content p {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-logo-text {
+    font-size: 1.2rem;
+  }
+
+  .footer-description {
+    font-size: 0.8rem;
+  }
+
+  .footer-services a,
+  .footer-explore a,
+  .footer-contact a {
+    font-size: 0.8rem;
+  }
+
+  .footer-copy {
+    font-size: 0.7rem;
+  }
+
+  .modal-content {
+    width: 85%;
+    max-width: 400px;
+    padding: 8px;
+  }
+
+  .modal-content h2 {
+    font-size: 16px;
+    padding-bottom: 3px;
+  }
+
+  .modal-content h3 {
+    font-size: 13px;
+  }
+
+  .modal-content p {
+    font-size: 11px;
+    margin-bottom: 6px;
+  }
+
+  .modal-close {
+    font-size: 16px;
+    top: 5px;
+    right: 8px;
+  }
+}
+
+@media (max-width: 360px) {
+  .modal-content {
+    width: 90%;
+    max-width: 350px;
+    padding: 6px;
+  }
+
+  .modal-content h2 {
+    font-size: 14px;
+  }
+
+  .modal-content h3 {
+    font-size: 12px;
+  }
+
+  .modal-content p {
+    font-size: 10.5px;
+  }
+
+  .modal-close {
+    font-size: 14px;
+  }
+}

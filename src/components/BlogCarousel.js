@@ -1,6 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./BlogCarousel.css";
-import blog1img from "../assets/images/72.jpg";
+import blog1img from "../assets/images/con1.jpg";
+import blog2img from "../assets/images/con2.jpg";
+import blog3img from "../assets/images/con3.jpg";
+import blog4img from "../assets/images/con4.jpg";
+import blog5img from "../assets/images/con5.jpg";
 
 const blogs = [
   {
@@ -12,24 +16,31 @@ const blogs = [
   },
   {
     id: 2,
-    title: "Modern Web Development Trends",
+    title: "AI Trends: The Future of Artificial Intelligence",
     author: "Jane Smith",
-    summary: "Learn about the latest tools and frameworks.",
-    image: "https://picsum.photos/600/400?random=2",
+    summary: "Explore cutting-edge AI developments and trends.",
+    image: `${blog2img}`,
   },
   {
     id: 3,
-    title: "Cybersecurity & Digital Safety",
+    title: "Generative AI and Chatbots: Transforming Digital Communication",
     author: "David Brown",
-    summary: "Stay ahead of cyber threats in the digital age.",
-    image: "https://picsum.photos/600/400?random=3",
+    summary: "How AI-powered chatbots are revolutionizing industries.",
+    image: `${blog3img}`,
   },
   {
     id: 4,
-    title: "The Rise of Cloud Computing",
+    title: "UI/UX & Modern Web Development Trends",
     author: "Emma Wilson",
-    summary: "Explore the benefits of cloud technology.",
-    image: "https://picsum.photos/600/400?random=4",
+    summary: "Enhancing user experiences with the latest web innovations.",
+    image: `${blog4img}`,
+  },
+  {
+    id: 5,
+    title: "Mastering Prompt Engineering in AI",
+    author: "Michael Johnson",
+    summary: "The art of crafting effective AI prompts.",
+    image: `${blog5img}`,
   },
 ];
 
@@ -120,6 +131,7 @@ const BlogCarousel = () => {
               <div className="popup-text">
                 {selectedIndex === 0 && (
                   <>
+                    <h4>Optimizing System Performance in Microservices</h4>
                     <p>
                       Microservices architecture has revolutionized software
                       development, offering scalability, resilience, and
@@ -127,7 +139,6 @@ const BlogCarousel = () => {
                       microservices is a complex task that requires continuous
                       monitoring and optimization.
                     </p>
-
                     <h4>
                       Why Measuring and Optimizing System Performance Matters
                     </h4>
@@ -157,82 +168,178 @@ const BlogCarousel = () => {
                         resilience.
                       </li>
                     </ul>
+                    {/* Key Performance Metrics, Tools, and Conclusion */}
+                  </>
+                )}
 
-                    <h4>Key Performance Metrics in Microservices</h4>
+                {selectedIndex === 1 && (
+                  <>
+                    <h4>AI Trends: The Future of Artificial Intelligence</h4>
+                    <p>
+                      AI is advancing rapidly, shaping industries and
+                      transforming business operations. From automation to deep
+                      learning, AI’s impact is undeniable.
+                    </p>
+                    <h4>Key Trends in AI for 2025</h4>
                     <ul>
                       <li>
-                        <strong>CPU Usage:</strong> Monitored using{" "}
-                        <code>top</code> and <code>ps aux</code>. Flamegraphs
-                        help visualize CPU-intensive operations.
+                        <strong>AI in Healthcare:</strong> Revolutionizing
+                        diagnostics and personalized treatments.
                       </li>
                       <li>
-                        <strong>Memory Usage:</strong> Measured with{" "}
-                        <code>free -m</code> and <code>vmstat</code>. Grafana
-                        and Prometheus provide real-time insights.
+                        <strong>Ethical AI:</strong> Addressing bias, privacy,
+                        and accountability.
                       </li>
                       <li>
-                        <strong>Throughput:</strong> Load testing tools like
-                        Apache JMeter and Gatling help measure requests per
-                        second.
+                        <strong>AI-Powered Automation:</strong> Enhancing
+                        efficiency across industries.
                       </li>
                       <li>
-                        <strong>Latency:</strong> Distributed tracing with
-                        Jaeger and log monitoring with Grafana + Loki identify
-                        delays.
-                      </li>
-                      <li>
-                        <strong>Error Rates:</strong> Monitored using the ELK
-                        Stack (Elasticsearch, Logstash, Kibana) and Prometheus
-                        Alertmanager.
+                        <strong>Explainable AI (XAI):</strong> Improving AI
+                        transparency and trust.
                       </li>
                     </ul>
+                    <h4>Challenges and Future Outlook</h4>
+                    <p>
+                      AI’s potential is immense, but challenges like ethical
+                      considerations, data privacy, and regulatory concerns need
+                      attention. The future of AI relies on responsible
+                      development and continued innovation.
+                    </p>
+                  </>
+                )}
 
+                {selectedIndex === 2 && (
+                  <>
                     <h4>
-                      Tools for Measuring and Visualizing System Performance
+                      Generative AI & Chatbots: Revolutionizing Communication
                     </h4>
-                    <table>
-                      <thead>
-                        <tr>
-                          <th>Metric</th>
-                          <th>Measurement Tools</th>
-                          <th>Visualization Tools</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>CPU Usage</td>
-                          <td>top, ps aux, Flamegraphs</td>
-                          <td>Grafana, Flamegraph Viewer</td>
-                        </tr>
-                        <tr>
-                          <td>Memory Usage</td>
-                          <td>free -m, vmstat</td>
-                          <td>Prometheus, Grafana</td>
-                        </tr>
-                        <tr>
-                          <td>Throughput</td>
-                          <td>JMeter, Gatling</td>
-                          <td>Grafana, Kibana</td>
-                        </tr>
-                        <tr>
-                          <td>Latency</td>
-                          <td>Jaeger, Grafana + Loki</td>
-                          <td>Jaeger UI, Grafana</td>
-                        </tr>
-                        <tr>
-                          <td>Error Rates</td>
-                          <td>ELK Stack, Prometheus</td>
-                          <td>Kibana, Grafana</td>
-                        </tr>
-                      </tbody>
-                    </table>
+                    <p>
+                      Generative AI is changing how businesses interact with
+                      users. From chatbots to content creation, AI models are
+                      enhancing engagement and automating tasks.
+                    </p>
+                    <h4>How Generative AI Works</h4>
+                    <p>
+                      Generative AI leverages deep learning to generate
+                      human-like text, images, and even music. Models like GPT-4
+                      and DALL·E 3 create content by analyzing vast datasets.
+                    </p>
+                    <h4>Applications of AI-Powered Chatbots</h4>
+                    <ul>
+                      <li>
+                        <strong>Customer Support:</strong> 24/7 AI-driven
+                        assistance.
+                      </li>
+                      <li>
+                        <strong>Marketing & Sales:</strong> Personalized
+                        recommendations and lead generation.
+                      </li>
+                      <li>
+                        <strong>Healthcare:</strong> AI-powered medical
+                        consultations.
+                      </li>
+                      <li>
+                        <strong>E-Commerce:</strong> Shopping assistants and
+                        order tracking.
+                      </li>
+                    </ul>
+                    <h4>Challenges in Generative AI</h4>
+                    <p>
+                      Despite its benefits, generative AI faces hurdles like
+                      bias, misinformation, and ethical concerns. Ensuring
+                      responsible use is crucial for its long-term success.
+                    </p>
+                  </>
+                )}
 
+                {selectedIndex === 3 && (
+                  <>
+                    <h4>UI/UX & Web Development: The Future of Design</h4>
+                    <p>
+                      User experience is at the core of web development. A
+                      well-crafted UI/UX design ensures accessibility,
+                      engagement, and usability.
+                    </p>
+                    <h4>Emerging UI/UX Trends</h4>
+                    <ul>
+                      <li>
+                        <strong>Dark Mode & Accessibility:</strong> Enhancing
+                        visual comfort and usability.
+                      </li>
+                      <li>
+                        <strong>Neumorphism vs. Glassmorphism:</strong> Modern
+                        design aesthetics gaining traction.
+                      </li>
+                      <li>
+                        <strong>Micro-Interactions:</strong> Adding subtle
+                        animations for better user engagement.
+                      </li>
+                      <li>
+                        <strong>AI-Assisted Design:</strong> Automating UI
+                        personalization.
+                      </li>
+                    </ul>
+                    <h4>Web Development Best Practices</h4>
+                    <ul>
+                      <li>Mobile-first design and responsive layouts.</li>
+                      <li>Performance optimization for faster load times.</li>
+                      <li>Security enhancements to prevent vulnerabilities.</li>
+                      <li>
+                        Integration of AI-driven chatbots for interactivity.
+                      </li>
+                    </ul>
                     <h4>Conclusion</h4>
                     <p>
-                      Monitoring system performance in microservices is crucial
-                      for scalability, reliability, and efficiency. By tracking
-                      key metrics and using the right tools, organizations can
-                      proactively optimize system health and prevent failures.
+                      The future of UI/UX and web development lies in creating
+                      immersive, accessible, and interactive experiences.
+                      Keeping up with modern trends ensures a seamless user
+                      journey.
+                    </p>
+                  </>
+                )}
+
+                {selectedIndex === 4 && (
+                  <>
+                    <h4>Mastering Prompt Engineering in AI</h4>
+                    <p>
+                      Prompt engineering is a crucial skill in AI interactions.
+                      The way prompts are structured can significantly impact an
+                      AI’s response quality.
+                    </p>
+                    <h4>Why Prompt Engineering Matters</h4>
+                    <ul>
+                      <li>
+                        <strong>Optimized AI Responses:</strong> Well-crafted
+                        prompts improve accuracy and relevance.
+                      </li>
+                      <li>
+                        <strong>Better AI Training:</strong> Helps AI models
+                        learn effectively.
+                      </li>
+                      <li>
+                        <strong>Use-Case Customization:</strong> Tailoring AI
+                        outputs for different industries.
+                      </li>
+                      <li>
+                        <strong>Reducing Bias & Errors:</strong> Structuring
+                        queries to avoid misleading results.
+                      </li>
+                    </ul>
+                    <h4>Best Practices in Prompt Engineering</h4>
+                    <ul>
+                      <li>Use clear, specific instructions.</li>
+                      <li>Break down complex queries into smaller steps.</li>
+                      <li>Test and refine prompts for better results.</li>
+                      <li>
+                        Leverage AI’s context awareness for improved accuracy.
+                      </li>
+                    </ul>
+                    <h4>Conclusion</h4>
+                    <p>
+                      Mastering prompt engineering allows users to unlock AI’s
+                      full potential. By crafting precise queries, developers
+                      and businesses can enhance AI-driven workflows.
                     </p>
                   </>
                 )}

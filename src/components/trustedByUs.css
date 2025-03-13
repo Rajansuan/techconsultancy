@@ -20,11 +20,11 @@
   .logo-container {
     display: flex;
     justify-content: center;
-    gap: 1rem; /* Gap between logos */
+    gap: -1rem; /* Gap between logos */
     margin-top: 2rem;
     margin-bottom: 2rem;
     flex-wrap: wrap; /* Allow logos to wrap on smaller screens */
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
   }
   
   .logo {

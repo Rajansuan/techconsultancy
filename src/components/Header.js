@@ -53,21 +53,21 @@ const Header = () => {
       </button>
 
       {/* Burger Menu */}
-      <div className="burger" onClick={toggleMenu}>
+      <div className={`burger ${menuOpen ? "open" : ""}`} onClick={toggleMenu}>
         <div className="burger-line"></div>
         <div className="burger-line"></div>
         <div className="burger-line"></div>
       </div>
 
-      {/* Full screen menu overlay */}
+      {/* Fullscreen Menu Overlay */}
       <div className={`fullscreen-menu ${menuOpen ? "active" : ""}`}>
         <ul className="fullscreen-nav-links">
-          <li><a href="#middle" onClick={() => handleScroll("middle")}>Home</a></li>
-          <li><a href="#about" onClick={() => handleScroll("about")}>About</a></li>
-          <li><a href="#services" onClick={() => handleScroll("services")}>Services</a></li>
-          <li><a href="#techstack" onClick={() => handleScroll("techstack")}>Technology</a></li>
-          <li><a href="#blogs" onClick={() => handleScroll("blogs")}>Blogs</a></li>
-          <li><a href="#contact" onClick={() => handleScroll("contact")}>Contact</a></li>
+          <li onClick={() => handleScroll("middle")}>Home</li>
+          <li onClick={() => handleScroll("about")}>About</li>
+          <li onClick={() => handleScroll("services")}>Services</li>
+          <li onClick={() => handleScroll("techstack")}>Technology</li>
+          <li onClick={() => handleScroll("blogs")}>Blogs</li>
+          <li onClick={() => handleScroll("contact")}>Contact</li>
         </ul>
       </div>
     </div>

@@ -76,9 +76,7 @@ const BlogCarousel = () => {
     <section className="blog-section" id="blogs">
       <h2 className="blog-heading">Latest Blogs</h2>
       <hr className="hr-line" />
-      <p className="services-description">
-        Check out our latest blog updates!
-      </p>
+      <p className="services-description">Check out our latest blog updates!</p>
       <div className="carousel-container">
         <button className="nav-button left" onClick={handlePrev}>
           ❮
@@ -123,28 +121,75 @@ const BlogCarousel = () => {
                 {selectedIndex === 0 && (
                   <>
                     <p>
-                      Microservices architecture has revolutionized software development, offering scalability, resilience, and flexibility. However, managing system performance in microservices is a complex task that requires continuous monitoring and optimization.
+                      Microservices architecture has revolutionized software
+                      development, offering scalability, resilience, and
+                      flexibility. However, managing system performance in
+                      microservices is a complex task that requires continuous
+                      monitoring and optimization.
                     </p>
 
-                    <h4>Why Measuring and Optimizing System Performance Matters</h4>
+                    <h4>
+                      Why Measuring and Optimizing System Performance Matters
+                    </h4>
                     <ul>
-                      <li><strong>Ensures Scalability:</strong> Regular monitoring helps prevent performance bottlenecks as the system scales.</li>
-                      <li><strong>Improves User Experience:</strong> Slow response times and downtime lead to user frustration and loss of customers.</li>
-                      <li><strong>Identifies and Fixes Bottlenecks:</strong> Issues like high CPU usage and slow API responses can be resolved before impacting production.</li>
-                      <li><strong>Optimizes Infrastructure Costs:</strong> Helps balance resource usage efficiently to reduce costs.</li>
-                      <li><strong>Enhances Reliability and Stability:</strong> Prevents unexpected failures, ensuring system resilience.</li>
+                      <li>
+                        <strong>Ensures Scalability:</strong> Regular monitoring
+                        helps prevent performance bottlenecks as the system
+                        scales.
+                      </li>
+                      <li>
+                        <strong>Improves User Experience:</strong> Slow response
+                        times and downtime lead to user frustration and loss of
+                        customers.
+                      </li>
+                      <li>
+                        <strong>Identifies and Fixes Bottlenecks:</strong>{" "}
+                        Issues like high CPU usage and slow API responses can be
+                        resolved before impacting production.
+                      </li>
+                      <li>
+                        <strong>Optimizes Infrastructure Costs:</strong> Helps
+                        balance resource usage efficiently to reduce costs.
+                      </li>
+                      <li>
+                        <strong>Enhances Reliability and Stability:</strong>{" "}
+                        Prevents unexpected failures, ensuring system
+                        resilience.
+                      </li>
                     </ul>
 
                     <h4>Key Performance Metrics in Microservices</h4>
                     <ul>
-                      <li><strong>CPU Usage:</strong> Monitored using <code>top</code> and <code>ps aux</code>. Flamegraphs help visualize CPU-intensive operations.</li>
-                      <li><strong>Memory Usage:</strong> Measured with <code>free -m</code> and <code>vmstat</code>. Grafana and Prometheus provide real-time insights.</li>
-                      <li><strong>Throughput:</strong> Load testing tools like Apache JMeter and Gatling help measure requests per second.</li>
-                      <li><strong>Latency:</strong> Distributed tracing with Jaeger and log monitoring with Grafana + Loki identify delays.</li>
-                      <li><strong>Error Rates:</strong> Monitored using the ELK Stack (Elasticsearch, Logstash, Kibana) and Prometheus Alertmanager.</li>
+                      <li>
+                        <strong>CPU Usage:</strong> Monitored using{" "}
+                        <code>top</code> and <code>ps aux</code>. Flamegraphs
+                        help visualize CPU-intensive operations.
+                      </li>
+                      <li>
+                        <strong>Memory Usage:</strong> Measured with{" "}
+                        <code>free -m</code> and <code>vmstat</code>. Grafana
+                        and Prometheus provide real-time insights.
+                      </li>
+                      <li>
+                        <strong>Throughput:</strong> Load testing tools like
+                        Apache JMeter and Gatling help measure requests per
+                        second.
+                      </li>
+                      <li>
+                        <strong>Latency:</strong> Distributed tracing with
+                        Jaeger and log monitoring with Grafana + Loki identify
+                        delays.
+                      </li>
+                      <li>
+                        <strong>Error Rates:</strong> Monitored using the ELK
+                        Stack (Elasticsearch, Logstash, Kibana) and Prometheus
+                        Alertmanager.
+                      </li>
                     </ul>
 
-                    <h4>Tools for Measuring and Visualizing System Performance</h4>
+                    <h4>
+                      Tools for Measuring and Visualizing System Performance
+                    </h4>
                     <table>
                       <thead>
                         <tr>
@@ -184,7 +229,10 @@ const BlogCarousel = () => {
 
                     <h4>Conclusion</h4>
                     <p>
-                      Monitoring system performance in microservices is crucial for scalability, reliability, and efficiency. By tracking key metrics and using the right tools, organizations can proactively optimize system health and prevent failures.
+                      Monitoring system performance in microservices is crucial
+                      for scalability, reliability, and efficiency. By tracking
+                      key metrics and using the right tools, organizations can
+                      proactively optimize system health and prevent failures.
                     </p>
                   </>
                 )}

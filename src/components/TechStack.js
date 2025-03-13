@@ -12,6 +12,18 @@ import generativeai from "../assets/images/generativeai.png";
 import postgre from "../assets/images/postgre.png";
 import java from "../assets/images/java.png";
 import illustrator from "../assets/images/illustrator.png";
+import figma from "../assets/images/figma.png";
+import openai from "../assets/images/openai.png";
+import azure from "../assets/images/azure.png";
+import aws from "../assets/images/aws.png";
+import docker from "../assets/images/docker.png";
+import mongo from "../assets/images/mongo.png";
+import oracle from "../assets/images/oracle.png";
+import go from "../assets/images/go.png";
+import github from "../assets/images/github.png";
+import flutter from "../assets/images/flutter.png";
+import gcp from "../assets/images/gcp.png";
+import html from "../assets/images/html.png";
 
 const TechStack = () => {
   return (
@@ -76,49 +88,49 @@ const TechStack = () => {
         {/* Right to Left Scroll */}
         <div className="tech-stack-line right-to-left">
           <div className="icon-container">
-            <img src={react} width="35px" height="35px" alt="React" />
+            <img src={figma} width="35px" height="35px" alt="Figma" />
           </div>
           <div className="icon-container">
-            <img src={python} width="35px" height="35px" alt="Python" />
+            <img src={openai} width="35px" height="35px" alt="OpenAI" />
           </div>
           <div className="icon-container">
-            <img src={javascript} width="35px" height="35px" alt="JavaScript" />
+            <img src={azure} width="35px" height="35px" alt="Azure" />
           </div>
           <div className="icon-container">
-            <img src={typescript} width="35px" height="35px" alt="TypeScript" />
+            <img src={aws} width="35px" height="35px" alt="AWS" />
           </div>
           <div className="icon-container">
-            <img src={angular} width="35px" height="35px" alt="Angular" />
+            <img src={docker} width="35px" height="35px" alt="Docker" />
           </div>
           <div className="icon-container">
-            <img src={swift} width="35px" height="35px" alt="Swift" />
+            <img src={mongo} width="35px" height="35px" alt="MongoDB" />
           </div>
           <div className="icon-container">
-            <img src={mysql} width="35px" height="35px" alt="MySQL" />
+            <img src={oracle} width="35px" height="35px" alt="Oracle" />
           </div>
           <div className="icon-container">
-            <img src={android} width="35px" height="35px" alt="Android" />
+            <img src={go} width="35px" height="35px" alt="Go" />
           </div>
           <div className="icon-container">
             <img
-              src={generativeai}
+              src={github}
               width="35px"
               height="35px"
-              alt="Generative AI"
+              alt="GitHub"
             />
           </div>
           <div className="icon-container">
-            <img src={postgre} width="35px" height="35px" alt="PostgreSQL" />
+            <img src={flutter} width="35px" height="35px" alt="Flutter" />
           </div>
           <div className="icon-container">
-            <img src={java} width="35px" height="35px" alt="Java" />
+            <img src={gcp} width="35px" height="35px" alt="GCP" />
           </div>
           <div className="icon-container">
             <img
-              src={illustrator}
+              src={html}
               width="35px"
               height="35px"
-              alt="Illustrator"
+              alt="HTML"
             />
           </div>
         </div>

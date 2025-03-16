@@ -3,8 +3,7 @@ import axios from "axios";
 import { motion } from "framer-motion";
 import { Mail, User, MessageSquare } from "lucide-react";
 import "./getInTouch.css";
-import contactImage from "../assets/images/getin.png"; // Add an image
-
+import contactImage from "../assets/images/getin.png"; 
 const GetInTouch = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -23,7 +22,7 @@ const GetInTouch = () => {
     setLoading(true);
     try {
       const response = await axios.post(
-        "https://your-backend-api.com/contact",
+        "http://52.24.42.79:8000/subscribe",
         formData
       );
       if (response.status === 200) {

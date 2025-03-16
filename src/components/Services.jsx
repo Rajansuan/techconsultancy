@@ -1,22 +1,22 @@
 import React from "react";
 import "./services.css";
-import { FaCloud, FaLock, FaChartLine, FaBrain, FaBusinessTime, FaTools } from "react-icons/fa";
+import { FaCloud, FaLock, FaChartLine, FaBrain, FaBusinessTime, FaPalette, FaMobileAlt } from "react-icons/fa";
 
 const services = [
   {
-    title: "Digital Transformation",
-    description: "Empower your business with cutting-edge digital strategies.",
-    icon: <FaTools />,
+    title: "Web Development",
+    description: "Design seamless UI/UX and web experiences.",
+    icon: <FaPalette />, 
+  },
+  {
+    title: "App Development",
+    description: "Build high-performance mobile applications for iOS and Android.",
+    icon: <FaMobileAlt />, 
   },
   {
     title: "Cloud Solutions",
     description: "Optimize your infrastructure with secure and scalable cloud services.",
     icon: <FaCloud />,
-  },
-  {
-    title: "Data Analytics",
-    description: "Turn data into insights with powerful analytics and AI-driven solutions.",
-    icon: <FaChartLine />,
   },
   {
     title: "Cybersecurity",
@@ -25,7 +25,7 @@ const services = [
   },
   {
     title: "AI & Machine Learning",
-    description: "Leverage AI to automate and enhance your business processes.",
+    description: "Leverage Gen AI to automate and enhance your business processes.",
     icon: <FaBrain />,
   },
   {

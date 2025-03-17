@@ -199,7 +199,7 @@
   position: fixed;  /* Stays fixed on the screen */
   top: 15px;        /* Adjust for spacing */
   right: 15px;      /* Adjust for spacing */
-  background: rgba(112, 0, 0, 0.6);
+  background: rgba(180, 0, 0, 0.6);
   color: white;
   border: none;
   font-size: 1.5rem;

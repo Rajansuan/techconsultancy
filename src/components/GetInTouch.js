@@ -22,8 +22,9 @@ const GetInTouch = () => {
     setLoading(true);
     try {
       const response = await axios.post(
-        "http://52.24.42.79:8000/subscribe",
-        formData
+        "https://codato.in/subscribe",
+        formData,
+	      { headers: { "Content-Type": "application/json" } }
       );
       if (response.status === 200) {
         setSuccess("Your message has been sent successfully!");
@@ -47,7 +48,7 @@ const GetInTouch = () => {
         <motion.div
           className="contact-image"
           initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
+         animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
           <img

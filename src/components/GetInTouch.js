@@ -3,7 +3,8 @@ import axios from "axios";
 import { motion } from "framer-motion";
 import { Mail, User, MessageSquare } from "lucide-react";
 import "./getInTouch.css";
-import contactImage from "../assets/images/getin.png"; 
+import contactImage from "../assets/images/getin.png";
+
 const GetInTouch = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -24,7 +25,7 @@ const GetInTouch = () => {
       const response = await axios.post(
         "https://codato.in/subscribe",
         formData,
-	      { headers: { "Content-Type": "application/json" } }
+        { headers: { "Content-Type": "application/json" } }
       );
       if (response.status === 200) {
         setSuccess("Your message has been sent successfully!");
@@ -37,18 +38,18 @@ const GetInTouch = () => {
   };
 
   return (
-    <section id="contact">
+    <section id="contact" className="contact-section">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         className="contact-container"
       >
-        {/* Left Side Image */}
+        {/* Left Side Image - Visible on all screens */}
         <motion.div
           className="contact-image"
           initial={{ opacity: 0, x: -50 }}
-         animate={{ opacity: 1, x: 0 }}
+          animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
           <img
@@ -60,11 +61,21 @@ const GetInTouch = () => {
 
         {/* Right Side Contact Form */}
         <div className="contact-card">
-          <h2 className="contact-title">Get in Touch With Us</h2>
+          <h2 className="contact-title">
+            Get in <span className="highlight">Touch</span>
+          </h2>
           <p className="contact-subtitle">
             We'd love to hear from you! Fill out the form below.
           </p>
-          {success && <p className="contact-success">{success}</p>}
+          {success && (
+            <motion.p 
+              className="contact-success"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+            >
+              {success}
+            </motion.p>
+          )}
 
           <form onSubmit={handleSubmit} className="contact-form">
             <div className="input-group">
@@ -102,9 +113,15 @@ const GetInTouch = () => {
                 className="input-field textarea"
               />
             </div>
-            <button type="submit" className="submit-btn" disabled={loading}>
+            <motion.button
+              type="submit"
+              className="submit-btn"
+              disabled={loading}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
               {loading ? "Sending..." : "Send Message"}
-            </button>
+            </motion.button>
           </form>
         </div>
       </motion.div>

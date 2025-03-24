@@ -1,260 +1,286 @@
-/* 🚀 Middle Section Layout */
-.middle-section {
+/* Global Page Container */
+.page-container {
+    /* background: linear-gradient(135deg, #1A0A2E 0%, #2D0B45 10%); */
+    min-height: 100vh;
+    position: relative;
+  }
+  
+  /* Middle Section Styles */
+  .middle-section {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 4rem 2rem;
-    flex-wrap: wrap;
-    max-width: 100%;
-    overflow-x: hidden; /* Prevents horizontal scrolling */
-}
-
-/* Text Content */
-.text-content {
+    padding: 5rem 10%;
+    color: white;
+    min-height: 90vh;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  /* Purple overlay effect */
+  .middle-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: radial-gradient(circle at 70% 30%, rgba(101, 45, 144, 0.3) 0%, transparent 50%); */
+    z-index: 0;
+  }
+  
+  /* Text Content */
+  .text-content {
     flex: 1;
-    max-width: 48%;
-    padding-right: 1.5rem;
-}
-
-/* Animation for Smooth Appearance */
-@keyframes slideUp {
-    from {
-        transform: translateY(100px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-.text-items {
-    animation: slideUp 1s ease-out;
-}
-
-/* Headings and Text */
-.mini-heading {
-    font-family: "Poppins", sans-serif;
+    max-width: 50%;
+    z-index: 2;
+    position: relative;
+  }
+  
+  /* Headings */
+  .mini-heading {
+    font-family: "Inter", sans-serif;
     font-weight: 600;
-    font-size: clamp(0.8rem, 2.5vw, 1.2rem);
-    letter-spacing: 6%;
-    color: rgba(35, 59, 151, 0.7);
-    margin-top: 4rem;
-    animation: slideUp 1s ease-out;
-}
-
-.transform-text {
+    font-size: 1rem;
+    color: #A45CFF;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+  }
+  
+  .transform-text {
     font-family: "Poppins", sans-serif;
     font-weight: 700;
-    font-size: clamp(1.5rem, 4.5vw, 3rem);
-    padding-top: 0.7rem;
-    color: #213344;
-    margin: 0;
-    animation: slideUp 1s ease-out;
-}
-
-.solutions-text {
-    font-family: 'Inter', sans-serif;
-    font-weight: 300;
-    font-size: clamp(1.2rem, 3.5vw, 1.6rem);
-    color: #323232;
-    margin: 0;
-    line-height: 1.4;
-    text-decoration: underline;
-    text-decoration-color: #FBD95E;
-    text-underline-offset: 5px;
-    animation: slideUp 1s ease-out;
-}
-
-.building-text {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
-    font-size: clamp(1rem, 3.5vw, 1.5rem);
-    letter-spacing: -1%;
-    color: #5D6C7C;
-    margin: 0;
-    padding-top: 2rem;
-    animation: slideUp 1s ease-out;
-}
-
-span {
-    color: #233B97;
-}
-
-/* Image Content */
-.image-content {
-    flex: 1;
-    max-width: 48%;
-    margin-right: 1.5rem;
-}
-
-.main-image {
+    font-size: 3.5rem;
+    color: #fff;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+  
+  .transform-text span:first-child {
+    color: #A45CFF;
+  }
+  
+  .transform-text span:last-child {
+    color: #A45CFF;
+    position: relative;
+  }
+  
+  .transform-text span:last-child::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
     width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-/* Buttons */
-.btn-holder {
-    display: flex;
-    gap: 1rem;
-    margin-top: 1.5rem;
-}
-
-/* "Book a Service" Button */
-.book-service-btn {
-    font-family: "Poppins", sans-serif;
-    font-size: 15.84px;
-    width: 180px;
-    height: 54px;
-    background: linear-gradient(to bottom, #3F62E6, #233B97);
-    border: none;
+    height: 3px;
+    background: #FFC857;
+    border-radius: 2px;
+  }
+  
+  /* Underlined Text */
+  .solutions-text {
+    font-family: "Inter", sans-serif;
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin: 1.5rem 0;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .solutions-text::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #FFC857;
+    transform-origin: left;
+    animation: underlineGrow 1s ease-out forwards;
+  }
+  
+  @keyframes underlineGrow {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+  }
+  
+  /* Expert Text */
+  .expert-container {
+    margin: 2rem 0;
+  }
+  
+  .expert-text {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+    position: relative;
+    padding-left: 2rem;
+  }
+  
+  .expert-text::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.3rem;
+    height: 70%;
+    width: 4px;
+    background: linear-gradient(to bottom, #A45CFF, #FFC857);
+    border-radius: 2px;
+  }
+  
+  .expert-highlight {
+    color: #FFC857;
+    font-weight: 600;
+  }
+  
+  .iit-highlight {
+    color: #A45CFF;
+    font-weight: 600;
+  }
+  
+  /* Consultation Button */
+  .btn-holder {
+    margin-top: 2rem;
+  }
+  
+  .consultation-btn {
+    background: linear-gradient(90deg, #A45CFF 0%, #6A3093 100%);
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 16px 40px;
     border-radius: 8px;
     color: white;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background 0.3s ease-in-out;
-}
-
-.book-service-btn:hover {
-    background: linear-gradient(to bottom, #233B97, #3F62E6);
-}
-
-/* "Live Demo" Button */
-.live-demo-btn {
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    font-size: 15.84px;
-    color: #EBCA53;
-    text-decoration: underline;
-    background: transparent;
     border: none;
     cursor: pointer;
-    transition: color 0.3s ease-in-out;
-}
-
-.live-demo-btn:hover {
-    color: #FFD700;
-}
-
-/* 🚀 RESPONSIVE DESIGN 🚀 */
-
-/* Tablet and Small Desktop Screens */
-@media (max-width: 1024px) {
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(164, 92, 255, 0.4);
+    width: 100%;
+    max-width: 320px;
+  }
+  
+  .consultation-btn:hover {
+    background: linear-gradient(90deg, #6A3093 0%, #A45CFF 100%);
+    box-shadow: 0 6px 20px rgba(164, 92, 255, 0.6);
+  }
+  
+  /* Image Section */
+  .image-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .main-image {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 12px;
+    transform: perspective(1000px) rotateY(-5deg);
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: perspective(1000px) rotateY(-5deg) translateY(0); }
+    50% { transform: perspective(1000px) rotateY(-5deg) translateY(-20px); }
+  }
+  
+  /* Glow effect */
+  .image-content::before {
+    content: '';
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    /* background: radial-gradient(circle, rgba(164, 92, 255, 0.2) 0%, rgba(164, 92, 255, 0) 70%); */
+    z-index: -1;
+    animation: pulse 8s infinite alternate;
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(0.95); opacity: 0.6; }
+    100% { transform: scale(1.05); opacity: 0.9; }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
     .middle-section {
-        padding: 2rem;
-        max-width: 95%;
-        margin: 0 auto;
+      flex-direction: column;
+      text-align: center;
+      padding: 4rem 5%;
+      margin-top: 70px;
     }
-
+  
     .text-content {
-        max-width: 55%;
+      max-width: 100%;
+      margin-bottom: 3rem;
     }
-
-    .image-content {
-        max-width: 40%;
+  
+    .expert-text::before {
+      display: none;
     }
-
-    .transform-text {
-        font-size: 5vw;
+  
+    .expert-text {
+      padding-left: 0;
     }
-
-    .building-text {
-        font-size: 3vw;
-    }
-
-    .main-image {
-        height: 400px;
-        width: auto;
-    }
-}
-
-/* Mobile Devices */
-@media (max-width: 768px) {
-    .middle-section {
-        flex-direction: column;
-        text-align: center;
-        padding: 2rem;
-        width: 80%;
-        margin: 0 auto;
-    }
-
-    .text-content {
-        max-width: 100%;
-        padding-right: 0;
-        margin-bottom: 2rem;
-    }
-
-    .image-content {
-        max-width: 100%;
-        margin-bottom: 2rem;
-    }
-
-    .main-image {
-        max-width: 100%;
-        height: auto;
-        margin-top: 2rem;
-        margin-left: 2rem;
-    }
-
-    /* Adjust buttons for mobile */
+  
     .btn-holder {
-        flex-direction: row;
-        justify-content: center;
+      display: flex;
+      justify-content: center;
     }
-
-    .book-service-btn,
-    .live-demo-btn {
-        width: 150px;
-        height: 50px;
-        font-size: 14px;
-    }
-
+  
     .transform-text {
-        font-size: 7vw;
+      font-size: 2.8rem;
     }
-
-    .building-text {
-        font-size: 4vw;
+  
+    .solutions-text {
+      font-size: 1.4rem;
     }
-}
-
-/* Small Mobile Screens */
-@media (max-width: 480px) {
-    .mini-heading {
-        font-size: 4vw;
-        margin-top: 0.5rem;
+  }
+  
+  @media (max-width: 768px) {
+    .middle-section {
+      margin-top: 60px;
+      padding: 3rem 5%;
     }
-
+  
     .transform-text {
-        font-size: 9vw;
+      font-size: 2.2rem;
     }
-
-    .building-text {
-        font-size: 5vw;
+  
+    .solutions-text {
+      font-size: 1.2rem;
     }
-
-    /* Adjust buttons for very small screens */
-    .book-service-btn,
-    .live-demo-btn {
-        width: 130px;
-        height: 45px;
-        font-size: 12px;
+  
+    .expert-text {
+      font-size: 1.1rem;
     }
-
+  
+    .consultation-btn {
+      max-width: 100%;
+      padding: 14px 30px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .middle-section {
+      margin-top: 60px;
+      padding: 2rem 5%;
+      min-height: auto;
+    }
+  
+    .transform-text {
+      font-size: 1.8rem;
+    }
+  
+    .solutions-text {
+      font-size: 1rem;
+    }
+  
+    .expert-text {
+      font-size: 1rem;
+    }
+  
     .main-image {
-        max-width: 90%;
-        height: auto;
+      max-width: 100%;
     }
-}
-
-/* Large Screens (Desktops) */
-@media (min-width: 1025px) {
-    .text-items {
-        margin-left: 6rem;
-        margin-top: -4rem;
-    }
-}
+  }

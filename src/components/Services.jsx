@@ -5,12 +5,12 @@ import { FaCloud, FaLock, FaChartLine, FaBrain, FaBusinessTime, FaPalette, FaMob
 const services = [
   {
     title: "Web Development",
-    description: "Design seamless UI/UX and web experiences.",
+    description: "Design seamless UI/UX and web experiences with cutting-edge technologies.",
     icon: <FaPalette />, 
   },
   {
     title: "App Development",
-    description: "Build high-performance mobile applications for iOS and Android.",
+    description: "Build high-performance mobile applications for iOS and Android platforms.",
     icon: <FaMobileAlt />, 
   },
   {
@@ -30,7 +30,7 @@ const services = [
   },
   {
     title: "IT Consulting",
-    description: "Strategic technology consulting to drive business growth.",
+    description: "Strategic technology consulting to drive business growth and innovation.",
     icon: <FaBusinessTime />,
   },
 ];
@@ -40,7 +40,7 @@ const Services = () => {
     <section id="services" className="services-section">
       <div className="services-container">
         <div className="services-header">
-          <h2 className="services-title">Our Expertise</h2>
+          <h2 className="services-title">Our <span className="highlight">Expertise</span></h2>
           <p className="services-description">
             We craft tailored technology solutions that drive success and innovation.
           </p>
@@ -52,6 +52,7 @@ const Services = () => {
               <div className="service-icon">{service.icon}</div>
               <h3 className="service-title">{service.title}</h3>
               <p className="service-description">{service.description}</p>
+              <div className="service-hover-effect"></div>
             </div>
           ))}
         </div>

@@ -1,130 +1,154 @@
-/* 🚀 Stats Section Layout */
+/* Stats Section Container */
 .stats-section {
+  padding: 4rem 2rem;
+  position: relative;
+  overflow: hidden;
+  margin-top: -6rem;
+}
+
+.stats-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.stats-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Default: 4 stats in a row */
-  gap: 2rem; /* Space between items */
-  text-align: center;
-  margin: 4rem;
-  max-width: 100%;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 
 /* Stat Item */
 .stat-item {
-  font-family: "Poppins", sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-width: 150px;
+  padding: 2rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  border: 1px solid rgba(164, 92, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(164, 92, 255, 0.2);
+  border-color: rgba(164, 92, 255, 0.4);
 }
 
 /* Counter Display */
 .countup {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   gap: 0.3rem;
 }
 
 /* Number Styling */
 .countup-number {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #233b97;
+  font-family: 'Poppins', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #A45CFF, #FFC857);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1;
 }
 
-/* Plus Sign */
+/* Plus Sign & Percentage */
 .plus-sign {
+  font-family: 'Poppins', sans-serif;
   font-size: 2rem;
+  font-weight: 700;
+  color: #FFC857;
+  line-height: 1;
+  margin-bottom: 0.3rem;
 }
 
 /* Description Text */
-.stat-item p {
-  font-size: 1.2rem;
-  color: #333;
-  margin-top: 0.5rem;
-  min-height: 50px; /* Forces equal height */
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.stat-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 1rem;
+  text-align: center;
+  line-height: 1.4;
 }
 
-/* 📌 Responsive Design */
-
-/* Tablet & Small Desktop Screens */
+/* Responsive Design */
 @media (max-width: 1024px) {
-  .stats-section {
-      grid-template-columns: repeat(2, 1fr); /* Two stats per row */
-      padding: 2rem;
-      gap: 1.5rem;
+  .stats-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
   }
-
+  
+  .stat-item {
+    padding: 1.5rem 1rem;
+  }
+  
   .countup-number {
-      font-size: 1.8rem;
+    font-size: 2.5rem;
   }
-
+  
   .plus-sign {
-      font-size: 1.8rem;
+    font-size: 1.8rem;
   }
-
-  .stat-item p {
-      font-size: 1.2rem;
+  
+  .stat-label {
+    font-size: 1rem;
   }
 }
 
-/* 📱 Mobile View: Two Stats Per Row */
 @media (max-width: 768px) {
   .stats-section {
-      grid-template-columns: repeat(2, 1fr); /* Two stats in one row */
-      padding: 2rem 1rem;
-      gap: 1rem;
+    padding: 3rem 1.5rem;
   }
-
-  .stat-item {
-      max-width: 100%;
+  
+  .stats-container {
+    gap: 1rem;
   }
-
+  
   .countup-number {
-      font-size: 1.6rem;
+    font-size: 2.2rem;
   }
-
+  
   .plus-sign {
-      font-size: 1.6rem;
-  }
-
-  .stat-item p {
-      font-size: 1.1rem;
+    font-size: 1.6rem;
   }
 }
 
-/* 📱 Small Mobile Screens (iPhone 12 Pro, 14 Pro, etc.) */
 @media (max-width: 480px) {
-  .stats-section {
-      grid-template-columns: repeat(2, 1fr); /* Still two stats per row */
-      padding: 0.2rem;
-      gap: 0.2rem;
-      width: 90%;
-      margin: 0 auto;
+  .stats-container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: -2rem;
   }
-
+  
   .stat-item {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+    padding: 1.5rem;
   }
-
+  
   .countup-number {
-      font-size: 1.7em;
+    font-size: 2.5rem;
   }
-
+  
   .plus-sign {
-      font-size: 1.7rem;
+    font-size: 1.8rem;
   }
-
-  .stat-item p {
-      font-size: 0.8rem;
-      min-height: 50px; /* Ensures perfect alignment */
+  
+  .stat-label {
+    font-size: 1rem;
   }
 }

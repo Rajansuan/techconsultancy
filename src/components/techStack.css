@@ -1,136 +1,217 @@
-/* Section Styling */
+
+
 .tech-stack-section {
-    position: relative;
-    padding: 6rem 2rem;
-    color: white;
-    overflow: hidden;
-    margin-top: 4rem;
-    margin-bottom: 4rem;
+  padding: 6rem 2rem;
+  position: relative;
+  overflow: hidden;
+  margin-top: -4rem;
+}
+
+.tech-stack-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Heading Styles */
+.stylish-heading {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+  line-height: 1.4;
+  text-align: center;
+  margin-bottom: 4rem;
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.stylish-heading .highlighted {
+  position: relative;
+  display: inline-block;
+}
+
+.stylish-heading .highlighted::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 5px;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(90deg, #A45CFF, #FFC857);
+  z-index: -1;
+  border-radius: 3px;
+}
+
+/* Tech Stack Lines */
+.tech-stack-line {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  width: max-content;
+  padding: 1rem 0;
+  will-change: transform;
+}
+
+.left-to-right {
+  animation: scroll-left 20s linear infinite;
+  margin-bottom: 2rem;
+}
+
+.right-to-left {
+  animation: scroll-right 20s linear infinite;
+}
+
+/* Icon Container */
+.icon-container {
+  background: rgba(164, 92, 255, 0.15);
+  backdrop-filter: blur(5px);
+  border-radius: 50%;
+  padding: 1.2rem;
+  border: 1px solid rgba(255, 200, 87, 0.2);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.icon-container:hover {
+  transform: scale(1.15);
+  background: rgba(255, 200, 87, 0.2);
+  box-shadow: 0 0 20px rgba(164, 92, 255, 0.6);
+}
+
+.icon-container img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  transition: all 0.3s ease;
+}
+
+.icon-container:hover img {
+}
+
+.icon-container.colored-logo img {
+  filter: none;
+  mix-blend-mode: luminosity;
+}
+
+.icon-container.colored-logo:hover img {
+  mix-blend-mode: normal;
+  filter: drop-shadow(0 0 5px rgba(255, 200, 87, 0.7));
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Pause animation on hover */
+@media (hover: hover) {
+  .tech-stack-line:hover {
+    animation-play-state: paused;
   }
   
-  .tech-stack-line
-  {
+  .icon-container:hover {
+    animation-play-state: paused;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .tech-stack-section {
+    padding: 4rem 1.5rem;
+  }
+  
+  .stylish-heading {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+  }
+  
+  .tech-stack-line {
+    gap: 1.5rem;
+  }
+  
+  .icon-container {
+    padding: 1rem;
+  }
+  
+  .icon-container img {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 768px) {
+  .stylish-heading {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+  
+  .tech-stack-line {
+    gap: 1rem;
+  }
+  
+  .icon-container {
+    padding: 0.9rem;
+  }
+  
+  .icon-container img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tech-stack-section {
+    padding: 3rem 1rem;
+  }
+  
+  .stylish-heading {
+    font-size: 1.5rem;
     margin-bottom: 1.5rem;
   }
-
-  /* Scrollable Line Styling */
+  
   .tech-stack-line {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    animation: scroll-line 15s linear infinite; /* Increased duration to slow down */
+    gap: 0.8rem;
   }
   
-  /* Left to Right */
-  .left-to-right {
-    animation: scroll-line 15s linear infinite; /* Increased duration for slower movement */
-    top: 0;
-  }
-  
-  /* Right to Left */
-  .right-to-left {
-    animation: scroll-line-reverse 15s linear infinite; /* Slower reverse scroll */
-    bottom: 0;
-    top: auto;
-  }
-  
-  /* Icon Container Styling */
   .icon-container {
-    background-color: white;
-    border-radius: 50%;
-    padding: 1rem;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
-    margin: 0 2rem;
-    transition: transform 0.3s ease-in-out;
+    padding: 0.8rem;
   }
   
-  /* Hover Effect */
-  .icon-container:hover {
-    transform: scale(1.1);
+  .icon-container img {
+    width: 25px;
+    height: 25px;
   }
-  
-  /* Stylish Heading with Slide-Up Animation */
-  .stylish-heading {
-    font-family: 'Poppins', sans-serif;
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #213344; /* Dark blue */
-    line-height: 1.4;
-    opacity: 0; /* Initially hidden for animation */
-    transform: translateY(50px); /* Start slightly below */
-    animation: slide-up 1.5s ease-in-out forwards;
-    margin-left: 4rem; /* Add left margin */
-  }
-  
-  /* Add more left margin for larger screens */
-  @media (min-width: 1024px) {
-    .stylish-heading {
-      margin-left: 8rem;
-      margin-top: 6rem;
-    }
-  }
-  
-  /* Highlight Styling */
-  .stylish-heading .highlighted {
-    position: relative;
-    color: #213344; /* Keep the text color */
-  }
-  
-  .stylish-heading .highlighted::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -5px; /* Adjust this to control distance from text */
-    width: 100%;
-    height: 5px;
-    background-color: #ffc107; /* Yellow */
-    z-index: -1;
-    border-radius: 2px;
-  }
-  
-  /* Animations */
-  @keyframes slide-up {
-    0% {
-      opacity: 0;
-      transform: translateY(50px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  @keyframes scroll-line {
-    0% {
-      transform: translateX(100%);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
-  }
-  
-  @keyframes scroll-line-reverse {
-    0% {
-      transform: translateX(-100%);
-    }
-    100% {
-      transform: translateX(100%);
-    }
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .icon-container {
-      padding: 0.75rem;
-      margin: 0 1rem;
-    }
-    .stylish-heading {
-      margin-left: 1.4rem;
-      margin-top: 6rem;
-      font-size: 1.4rem;
-    }
-  }
-  
+}

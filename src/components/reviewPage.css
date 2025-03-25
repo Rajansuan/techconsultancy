@@ -213,9 +213,20 @@
 }
 
 /* Responsive Design */
+@media (max-width: 1440px) {
+    .review-page{
+        margin-left: 3rem;
+        margin-right: 3rem;
+      }
+}
+
 @media (max-width: 1024px) {
   .review-grid {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  .review-page{
+    margin-left: 3rem;
+    margin-right: 3rem;
   }
 }
 

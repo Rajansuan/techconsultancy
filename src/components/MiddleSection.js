@@ -5,6 +5,41 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Header from "./Header";
 
+const BlobBackground = () => {
+  return (
+    <div className="blobs-container">
+      <motion.div 
+        className="blob purple-blob"
+        initial={{ x: -100, y: -100, opacity: 0.3 }}
+        animate={{
+          x: [0, 50, 0],
+          y: [0, 50, 0],
+          transition: {
+            duration: 20,
+            repeat: Infinity,
+            repeatType: "reverse",
+            ease: "easeInOut"
+          }
+        }}
+      />
+      <motion.div 
+        className="blob yellow-blob"
+        initial={{ x: 100, y: 100, opacity: 0.3 }}
+        animate={{
+          x: [0, -50, 0],
+          y: [0, -50, 0],
+          transition: {
+            duration: 25,
+            repeat: Infinity,
+            repeatType: "reverse",
+            ease: "easeInOut"
+          }
+        }}
+      />
+    </div>
+  );
+};
+
 const MiddleSection = () => {
   const controls = useAnimation();
   const [ref, inView] = useInView({
@@ -61,6 +96,7 @@ const MiddleSection = () => {
         animate={controls}
         variants={containerVariants}
       >
+        <BlobBackground />
         <div className="text-content">
           <motion.div variants={itemVariants}>
             <div className="mini-heading">INNOVATE WITH CONFIDENCE</div>

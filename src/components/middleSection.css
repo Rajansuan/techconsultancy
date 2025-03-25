@@ -60,6 +60,7 @@
     max-width: 50%;
     z-index: 2;
     position: relative;
+    margin-top: 3rem;
   }
   
   /* Headings */
@@ -195,6 +196,7 @@
     justify-content: center;
     position: relative;
     z-index: 1;
+    margin-top: 5rem;
   }
   
   .main-image {
@@ -268,6 +270,15 @@
       max-width: 100%;
       padding: 14px 30px;
     }
+    .image-content{
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .text-content{
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+    }
   }
   
   @media (max-width: 480px) {
@@ -297,5 +308,15 @@
       width: 200px;
       height: 200px;
       filter: blur(40px);
+    }
+
+    .image-content{
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+    }
+    
+    .text-content{
+      margin-top: 1rem;
+      margin-bottom: 2rem;
     }
   }

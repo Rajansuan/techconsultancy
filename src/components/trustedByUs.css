@@ -5,7 +5,7 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  margin-top: -4rem;
+  margin-top: -2rem;
   margin-bottom: -4rem;
 }
 
@@ -54,8 +54,8 @@
 }
 
 .logo-wrapper {
-  width: 160px;
-  height: 80px;
+  width: 200px;
+  height: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -110,8 +110,8 @@
   }
   
   .logo-wrapper {
-    width: 120px;
-    height: 60px;
+    width: 160px;
+    height: 80px;
   }
 }
 
@@ -129,7 +129,7 @@
   }
   
   .logo-wrapper {
-    width: 100px;
-    height: 50px;
+    width: 140px;
+    height: 280px;
   }
 }

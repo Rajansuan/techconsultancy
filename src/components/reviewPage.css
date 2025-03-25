@@ -231,29 +231,17 @@
   .review-subtitle {
     font-size: 1rem;
   }
-
-  .review-page{
-    margin-bottom: 2rem;
-  }
-
   .review-header{
     margin-bottom: 6rem;
   }
-  
-
+  .review-page{
+    margin-bottom: 1rem;
+  }
 }
 
 @media (max-width: 480px) {
   .review-grid {
     grid-template-columns: 1fr;
-  }
-
-  .review-page{
-    margin-bottom: 2rem;
-  }
-
-  .review-header{
-    margin-bottom: 6rem;
   }
   
   .review-card {
@@ -261,6 +249,9 @@
     min-height: 300px;
     width: 90%;
     margin: 0 auto;
+  }
+  .review-header{
+    margin-bottom: 6rem;
   }
   
   .review-title {
@@ -274,5 +265,8 @@
   .star-img {
     width: 20px;
     height: 20px;
+  }
+  .review-page{
+    margin-bottom: 1rem;
   }
 }

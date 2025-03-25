@@ -11,6 +11,7 @@ import GetInTouch from "./components/GetInTouch";
 import BlogCarousel from "./components/BlogCarousel";
 import BlogPage from "./components/BlogPage";
 import BackgroundWrapper from './components/BackgroundWrapper';
+import ReviewPage from "./components/ReviewPage";
 
 const Home = () => (
   <>
@@ -19,6 +20,7 @@ const Home = () => (
     <TrustedByUs />
     <TechStack />
     <Services />
+    <ReviewPage />
     <BlogCarousel />
     <GetInTouch />
     <Footer />

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "./techStack.css";
 import react from "../assets/images/react.png";
 import python from "../assets/images/python.png";
@@ -26,15 +26,46 @@ import gcp from "../assets/images/gcp.png";
 import html from "../assets/images/html.png";
 
 const TechStack = () => {
-  const leftIcons = [
-    react, python, javascript, typescript, angular, swift, 
-    mysql, android, generativeai, postgre, java, illustrator
+  const solarSystemRef = useRef(null);
+
+  // Orbit configuration with unique icons and proper spacing
+  const orbits = [
+    { radius: 80, icons: [react, javascript] },       // 2 icons
+    { radius: 140, icons: [angular, android, postgre, java] }, // 4 icons
+    { radius: 200, icons: [illustrator, python, azure, figma, typescript, swift] }, // 6 icons
+    { radius: 260, icons: [go, github, flutter, mysql, html, generativeai, docker, flutter] }  // 8 icons
   ];
-  
-  const rightIcons = [
-    figma, openai, azure, aws, docker, mongo, 
-    oracle, go, github, flutter, gcp, html
-  ];
+
+  // const orbits = [
+  //   { radius: 80, icons: [react, python, javascript, typescript] },       // 4 icons
+  //   { radius: 140, icons: [angular, swift, mysql, android, postgre, java] }, // 6 icons
+  //   { radius: 200, icons: [illustrator, figma, openai, azure, aws, docker, mongo, oracle] }, // 8 icons
+  //   { radius: 260, icons: [go, github, flutter, gcp, html, generativeai] }  // 6 icons
+  // ];
+
+  useEffect(() => {
+    let animationId;
+    const animate = () => {
+      if (!solarSystemRef.current) return;
+      
+      const orbitElements = solarSystemRef.current.querySelectorAll('.orbit');
+      orbitElements.forEach((orbit, index) => {
+        const speed = [0.02, -0.015, 0.01, -0.008][index]; // Different speeds for each orbit
+        const rotation = (prevRotation) => {
+          const newRotation = (prevRotation + speed) % 360;
+          orbit.style.transform = `rotate(${newRotation}deg)`;
+          return newRotation;
+        };
+        const prevRotation = parseFloat(orbit.dataset.rotation || 0);
+        orbit.dataset.rotation = rotation(prevRotation);
+      });
+      
+      animationId = requestAnimationFrame(animate);
+    };
+
+    animationId = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(animationId);
+  }, []);
 
   return (
     <section id="techstack" className="tech-stack-section">
@@ -44,24 +75,58 @@ const TechStack = () => {
         Your Product
       </h1>
 
-      <div className="tech-stack-container">
-        {/* Left to Right Scroll */}
-        <div className="tech-stack-line left-to-right">
-          {leftIcons.map((icon, index) => (
-            <div className="icon-container" key={`left-${index}`}>
-              <img src={icon} width="35" height="35" alt="Tech icon" loading="lazy" />
-            </div>
-          ))}
+      <div className="solar-system" ref={solarSystemRef}>
+        <div className="central-core">
+          <div className="core-glow"></div>
         </div>
-
-        {/* Right to Left Scroll */}
-        <div className="tech-stack-line right-to-left">
-          {rightIcons.map((icon, index) => (
-            <div className="icon-container" key={`right-${index}`}>
-              <img src={icon} width="35" height="35" alt="Tech icon" loading="lazy" />
-            </div>
-          ))}
-        </div>
+        
+        {/* Orbit tracks */}
+        {orbits.map((orbit, i) => (
+          <div 
+            key={`track-${i}`} 
+            className={`orbit-track orbit-${i+1}`}
+            style={{ 
+              width: `${orbit.radius * 2}px`, 
+              height: `${orbit.radius * 2}px` 
+            }}
+          ></div>
+        ))}
+        
+        {/* Orbiting icons */}
+        {orbits.map((orbit, orbitIndex) => (
+          <div 
+            key={`orbit-${orbitIndex}`}
+            className={`orbit orbit-${orbitIndex+1}`}
+            data-rotation="0"
+            style={{
+              width: `${orbit.radius * 2}px`,
+              height: `${orbit.radius * 2}px`
+            }}
+          >
+            {orbit.icons.map((icon, iconIndex) => {
+              const angle = (iconIndex * 360) / orbit.icons.length;
+              return (
+                <div 
+                  className="orbiting-icon" 
+                  key={`${orbitIndex}-${iconIndex}`}
+                  style={{
+                    transform: `rotate(${angle}deg) translateX(${orbit.radius}px) rotate(-${angle}deg)`
+                  }}
+                >
+                  <div className="icon-container">
+                    <img 
+                      src={icon} 
+                      width="24" 
+                      height="24" 
+                      alt="Tech icon" 
+                      loading="lazy" 
+                    />
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        ))}
       </div>
     </section>
   );

@@ -28,34 +28,50 @@ import html from "../assets/images/html.png";
 const TechStack = () => {
   const solarSystemRef = useRef(null);
 
-  // Orbit configuration with unique icons and proper spacing
-  const orbits = [
-    { radius: 80, icons: [react, javascript] },       // 2 icons
-    { radius: 140, icons: [angular, android, postgre, java] }, // 4 icons
-    { radius: 200, icons: [illustrator, python, azure, figma, typescript, swift] }, // 6 icons
-    { radius: 260, icons: [go, github, flutter, mysql, html, generativeai, docker, flutter] }  // 8 icons
+  // Tech facts positioned in specific quadrants
+  const techFacts = [
+    { text: "JavaScript was created in 10 days!", position: { top: '20%', left: '20%' } },
+    { text: "Python is named after Monty Python", position: { top: '20%', right: '20%' } },
+    { text: "React was first deployed on Facebook", position: { bottom: '20%', left: '20%' } },
+    { text: "Go was created at Google in 2007", position: { bottom: '20%', right: '20%' } },
+    { text: "First computer bug was a real moth", position: { top: '40%', left: '10%' } },
+    { text: "TypeScript = JavaScript + Types", position: { top: '40%', right: '10%' } },
   ];
 
-  // const orbits = [
-  //   { radius: 80, icons: [react, python, javascript, typescript] },       // 4 icons
-  //   { radius: 140, icons: [angular, swift, mysql, android, postgre, java] }, // 6 icons
-  //   { radius: 200, icons: [illustrator, figma, openai, azure, aws, docker, mongo, oracle] }, // 8 icons
-  //   { radius: 260, icons: [go, github, flutter, gcp, html, generativeai] }  // 6 icons
-  // ];
+  // Star positions
+  const starPositions = [
+    { top: '10%', left: '10%' }, { top: '15%', left: '25%' },
+    { top: '10%', right: '10%' }, { top: '15%', right: '25%' },
+    { bottom: '10%', left: '10%' }, { bottom: '15%', left: '25%' },
+    { bottom: '10%', right: '10%' }, { bottom: '15%', right: '25%' }
+  ];
+
+  // Orbit configuration
+  const orbits = [
+    { radius: 80, icons: [react, javascript] },
+    { radius: 140, icons: [angular, android, postgre, java] },
+    { radius: 200, icons: [illustrator, python, azure, figma, typescript, swift] },
+    { radius: 260, icons: [go, github, flutter, mysql, html, generativeai, docker, gcp] }
+  ];
 
   useEffect(() => {
     let animationId;
     const animate = () => {
       if (!solarSystemRef.current) return;
       
+      const isMobile = window.innerWidth < 768;
       const orbitElements = solarSystemRef.current.querySelectorAll('.orbit');
+      
       orbitElements.forEach((orbit, index) => {
-        const speed = [0.02, -0.015, 0.01, -0.008][index]; // Different speeds for each orbit
+        const speeds = isMobile ? [0.04, -0.03, 0.02, -0.016] : [0.02, -0.015, 0.01, -0.008];
+        const speed = speeds[index];
+        
         const rotation = (prevRotation) => {
           const newRotation = (prevRotation + speed) % 360;
           orbit.style.transform = `rotate(${newRotation}deg)`;
           return newRotation;
         };
+        
         const prevRotation = parseFloat(orbit.dataset.rotation || 0);
         orbit.dataset.rotation = rotation(prevRotation);
       });
@@ -76,6 +92,26 @@ const TechStack = () => {
       </h1>
 
       <div className="solar-system" ref={solarSystemRef}>
+        
+        {starPositions.map((pos, index) => (
+          <div 
+            key={`star-${index}`}
+            className="star"
+            style={pos}
+          />
+        ))}
+
+        {/* Strategically placed tech facts */}
+        {techFacts.map((fact, index) => (
+          <div 
+            key={`fact-${index}`} 
+            className="tech-fact"
+            style={fact.position}
+          >
+            {fact.text}
+          </div>
+        ))}
+
         <div className="central-core">
           <div className="core-glow"></div>
         </div>

@@ -3,6 +3,7 @@
   padding: 5rem 2rem;
   text-align: center;
   overflow: hidden;
+  position: relative;
 }
 
 .stylish-heading {
@@ -12,6 +13,7 @@
   color: white;
   margin-bottom: 3rem;
   position: relative;
+  z-index: 2;
 }
 
 .highlighted {
@@ -41,6 +43,47 @@
   align-items: center;
 }
 
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.3;
+  animation: twinkle 3s infinite alternate;
+  z-index: 1;
+}
+
+.star:nth-child(odd) {
+  animation-delay: 0.5s;
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.2; transform: scale(0.8); }
+  100% { opacity: 0.5; transform: scale(1.1); }
+}
+
+/* Tech facts */
+.tech-fact {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
+  max-width: 140px;
+  text-align: center;
+  padding: 0.5rem;
+  background: rgba(164, 92, 255, 0.1);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 200, 87, 0.2);
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.tech-fact:hover {
+  color: #FFC857;
+  transform: scale(1.05);
+  background: rgba(164, 92, 255, 0.2);
+}
+
 .central-core {
   position: absolute;
   width: 60px;
@@ -48,7 +91,7 @@
   border-radius: 50%;
   background: radial-gradient(circle at center, #FFC857 0%, #A45CFF 100%);
   box-shadow: 0 0 30px rgba(164, 92, 255, 0.6);
-  z-index: 1;
+  z-index: 3;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -64,15 +107,17 @@
 
 .orbit-track {
   position: absolute;
-  border: 1px solid rgba(255, 255, 255, 0.159);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 50%;
   transform-origin: center;
+  z-index: 2;
 }
 
 .orbit {
   position: absolute;
   transform-origin: center;
   will-change: transform;
+  z-index: 3;
 }
 
 .orbiting-icon {
@@ -113,26 +158,27 @@
 @media (max-width: 768px) {
   .tech-stack-section {
     padding: 3rem 1rem;
-    margin-bottom: 4rem;
   }
   
   .solar-system {
     height: 500px;
-    margin-bottom: 3rem;
+    margin-top: 6rem;
+    margin-bottom: 4rem;
   }
   
   .stylish-heading {
     font-size: 1.8rem;
   }
+
+  .tech-fact {
+    font-size: 0.7rem;
+    max-width: 120px;
+  }
 }
 
 @media (max-width: 480px) {
-  .tech-stack-section {
-    margin-bottom: 4rem;
-  }
   .solar-system {
     height: 400px;
-    margin-bottom: 3rem;
   }
   
   .central-core {
@@ -147,5 +193,9 @@
   .icon-container img {
     width: 20px;
     height: 20px;
+  }
+
+  .tech-fact {
+    display: none;
   }
 }

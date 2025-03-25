@@ -113,10 +113,12 @@
 @media (max-width: 768px) {
   .tech-stack-section {
     padding: 3rem 1rem;
+    margin-bottom: 4rem;
   }
   
   .solar-system {
     height: 500px;
+    margin-bottom: 3rem;
   }
   
   .stylish-heading {
@@ -125,8 +127,12 @@
 }
 
 @media (max-width: 480px) {
+  .tech-stack-section {
+    margin-bottom: 4rem;
+  }
   .solar-system {
     height: 400px;
+    margin-bottom: 3rem;
   }
   
   .central-core {

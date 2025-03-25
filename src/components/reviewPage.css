@@ -258,7 +258,7 @@
   .review-card {
     height: auto;
     min-height: 300px;
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
   }
   .review-header{
@@ -279,5 +279,7 @@
   }
   .review-page{
     margin-bottom: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
   }
 }

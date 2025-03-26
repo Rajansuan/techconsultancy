@@ -173,6 +173,7 @@
     flex-direction: row;
     align-items: center;
     padding: 2rem;
+    margin-top: 2rem;
   }
 
   .contact-image {
@@ -184,11 +185,21 @@
   }
 }
 
+
+
+@media (max-width: 576px) {
+  .contact-container {
+    margin-top: 4rem;
+  }
+}
+
+
 /* Large Desktop Layout */
 @media (min-width: 1024px) {
   .contact-container {
     gap: 3rem;
     padding: 3rem 2rem;
+    margin-top: 2rem;
   }
 
   .contact-image {

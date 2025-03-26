@@ -17,7 +17,7 @@ const blogs = [
     readTime: "8 min read",
     summary: "Advanced techniques for scaling microservices architecture to handle millions of requests with minimal latency.",
     image: blog1img,
-    category: "Backend",
+    category: "APIs",
     color: "#A45CFF",
     icon: "⚙️"
   },
@@ -65,7 +65,7 @@ const blogs = [
     readTime: "9 min read",
     summary: "Practical applications of blockchain technology beyond cryptocurrency in enterprise systems.",
     image: blog5img,
-    category: "Blockchain",
+    category: "DLTs",
     color: "#A45CFF",
     icon: "⛓️"
   }

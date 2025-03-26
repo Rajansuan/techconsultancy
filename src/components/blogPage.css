@@ -429,7 +429,7 @@
   }
   
   .article-title {
-    font-size: 2.6rem;
+    font-size: 1.6rem;
   }
   
 
@@ -457,5 +457,10 @@
   .featured-image-container{
     width: 90%;
     margin: 0 auto;
+
+    .article-title {
+      font-size: 1.6rem;
+    }
+    
   }
 }

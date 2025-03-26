@@ -161,9 +161,9 @@ const BlogCarousel = () => {
               </div>
             </div>
             
-            <div className="read-more">
+            {/* <div className="read-more">
               Read Article →
-            </div>
+            </div> */}
           </motion.div>
         ))}
       </div>

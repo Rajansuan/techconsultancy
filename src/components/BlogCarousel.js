@@ -1,6 +1,6 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { motion, useScroll, useTransform, useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 import "./BlogCarousel.css";
 import blog1img from "../assets/images/con1.jpg";
 import blog2img from "../assets/images/con2.jpg";
@@ -73,113 +73,71 @@ const blogs = [
 
 const BlogCarousel = () => {
   const navigate = useNavigate();
-  const sectionRef = useRef(null);
-  const containerRef = useRef(null);
-  const controls = useAnimation();
-  
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start end", "end start"]
-  });
-  
-  // Parallax effects
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "10%"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.3, 1], [0, 1, 0.8]);
-  const scale = useTransform(scrollYProgress, [0, 1], [0.95, 1]);
-
-  // Card animations
-  const cardVariants = {
-    offscreen: {
-      y: 100,
-      opacity: 0,
-      rotate: -2
-    },
-    onscreen: {
-      y: 0,
-      opacity: 1,
-      rotate: 0,
-      transition: {
-        type: "spring",
-        bounce: 0.4,
-        duration: 0.8
-      }
-    }
-  };
 
   const handleCardClick = (blogId) => {
     navigate(`/blogs/${blogId}`);
   };
 
   return (
-    <motion.section 
-      className="blog-section" 
-      id="blogs"
-      ref={sectionRef}
-      style={{
-        y,
-        opacity,
-        scale
-      }}
-    >
-      <div className="magic-wand"></div>
-      <div className="floating-orb"></div>
-      
+    <section className="blog-section" id="blogs">
       <div className="blog-header">
         <motion.h2 
           className="blog-heading"
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "0px 0px -100px 0px" }}
-          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
         >
           <span className="heading-gradient">Latest Insights</span>
         </motion.h2>
         <motion.p 
           className="blog-subtitle"
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "0px 0px -100px 0px" }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
         >
-          Scroll to explore our collection of technical articles
+          Explore our collection of technical articles
         </motion.p>
       </div>
       
-      <div className="cards-container" ref={containerRef}>
+      <div className="cards-container">
         {blogs.map((blog, index) => (
           <motion.div
             key={blog.id}
             className="blog-card"
             onClick={() => handleCardClick(blog.id)}
-            initial="offscreen"
-            whileInView="onscreen"
-            viewport={{ once: true, margin: "0px 0px -100px 0px" }}
-            variants={cardVariants}
-            transition={{ delay: index * 0.1 }}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ 
+              duration: 0.6,
+              delay: index * 0.1,
+              ease: "easeOut"
+            }}
             whileHover={{ 
-              y: -10,
-              boxShadow: `0 25px 50px -12px ${blog.color}40`
+              y: -5,
+              boxShadow: "0 15px 30px rgba(164, 92, 255, 0.2)"
             }}
             style={{ 
-              borderLeft: `5px solid ${blog.color}`,
-              backgroundColor: `${blog.color}15`
+              borderLeft: `4px solid ${blog.color}`,
+              backgroundColor: `${blog.color}08`
             }}
           >
             <div className="card-decoration" style={{ backgroundColor: blog.color }}></div>
             <div className="card-icon">{blog.icon}</div>
             
             <div className="image-container">
-              <motion.img 
+              <img 
                 src={blog.image} 
                 alt={blog.title} 
                 className="blog-image"
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                loading="lazy"
               />
             </div>
             
             <div className="blog-details">
-              <div className="category-badge" style={{ color: "white" }}>
+              <div className="category-badge" style={{ backgroundColor: blog.color }}>
                 {blog.category}
               </div>
               
@@ -188,12 +146,7 @@ const BlogCarousel = () => {
                 <span className="blog-read-time">{blog.readTime}</span>
               </div>
               
-              <motion.h3 
-                className="blog-title"
-                whileHover={{ color: blog.color }}
-              >
-                {blog.title}
-              </motion.h3>
+              <h3 className="blog-title">{blog.title}</h3>
               
               <p className="blog-summary">{blog.summary}</p>
               
@@ -208,25 +161,13 @@ const BlogCarousel = () => {
               </div>
             </div>
             
-            <div className="read-more" style={{ color: "#260B3C" }}>
+            <div className="read-more">
               Read Article →
             </div>
           </motion.div>
         ))}
       </div>
-      
-      <motion.div 
-        className="scroll-hint"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: [0, 1, 0] }}
-        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-      >
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path d="M7 10L12 15L17 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
-        Scroll
-      </motion.div>
-    </motion.section>
+    </section>
   );
 };
 

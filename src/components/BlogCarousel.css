@@ -211,7 +211,7 @@
   }
   
   .read-more {
-    display: block;
+    display: none;
   }
 }
 
@@ -230,6 +230,9 @@
   
   .blog-details {
     padding: 2rem;
+  }
+  .read-more {
+    display: none;
   }
   
   .category-badge {

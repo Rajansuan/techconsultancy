@@ -24,10 +24,10 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
     "start": "cross-env NODE_OPTIONS=--no-experimental-webstorage react-scripts start",
-    "build": "cross-env NODE_OPTIONS=--no-experimental-webstorage react-scripts build"
+    "build": "cross-env NODE_OPTIONS=--no-experimental-webstorage react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
